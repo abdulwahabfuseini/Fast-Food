@@ -1,17 +1,45 @@
 {
-  "name": "best-burger",
+  "name": "fast-food",
   "version": "0.1.0",
+  "homepage": "https://abdulwahabfuseini.github.io/Fast-Foods",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "@hookform/resolvers": "^3.1.1",
+    "@react-google-maps/api": "^2.18.1",
+    "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/yup": "^0.32.0",
+    "antd": "^5.7.0",
+    "aos": "^3.0.0-beta.6",
+    "bootstrap": "^5.3.0",
+    "emailjs": "^4.0.2",
+    "firebase": "^10.1.0",
+    "google-maps-react": "^2.0.6",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
+    "react-firebase-hooks": "^5.1.1",
+    "react-hook-form": "^7.45.2",
+    "react-icons": "^4.10.1",
+    "react-redux": "^8.1.1",
+    "react-router-dom": "^6.13.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-scroll": "^1.8.9",
+    "react-slick": "^0.28.1",
+    "react-spinners": "^0.13.8",
+    "reactstrap": "^9.2.0",
+    "redux": "^4.2.1",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^9.4.1",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.2.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -34,5 +62,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@shrutibalasa/tailwind-grid-auto-fit": "^1.1.0",
+    "gh-pages": "^5.0.0",
+    "tailwindcss": "^3.3.2"
   }
 }
