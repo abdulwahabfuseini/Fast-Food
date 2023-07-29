@@ -1,6 +1,8 @@
 import React from "react";
 import { Col, Row } from "reactstrap";
 import { FooterLinks } from "../Assets/Data/Navigation";
+import Background from "../Assets/images/SVG/Slide1.jpg"
+import Logo from "../Assets/images/Logo.png"
 
 
 const Footer = () => {
@@ -8,7 +10,7 @@ const Footer = () => {
     <footer className="relative w-full h-[800px]  sm:h-[650px] lg:h-[480px]">
       <Row>
         <img
-          src="./images/SVG/Slide1.jpg"
+          src={Background}
           alt="FootBg"
           className="object-cover w-full h-[800px]  sm:h-[650px] lg:h-[480px]"
         />
@@ -59,7 +61,7 @@ const Footer = () => {
           <span>
             {" "}
             <img
-              src="../images/Logo.png"
+              src={Logo}
               alt=""
               className="w-full h-5 sm:h-10"
             />

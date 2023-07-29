@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
+import HungryMan from "../Assets/images/SVG/hungryMan.webp"
 
 const StartPage = () => {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ const StartPage = () => {
         <Col className="text-center shadow-md">
           <Col>
             <img
-              src="../images/SVG/hungryMan.webp"
+              src={HungryMan}
               alt="order"
               className="object-contain w-full h-96 lg:h-80"
             />
@@ -26,7 +27,7 @@ const StartPage = () => {
             </h1>
             <button
               onClick={openLogin}
-              className="px-4 py-2 my-6 text-lg border-2 rounded-lg border-dry bg-green-800 text-white font-medium hover:ring-4 hover:bg-transparent hover:text-Text"
+              className="px-4 py-2 my-6 text-lg font-medium text-white bg-green-800 border-2 rounded-lg border-dry hover:ring-4 hover:bg-transparent hover:text-Text"
             >
               Order Some Food
             </button>

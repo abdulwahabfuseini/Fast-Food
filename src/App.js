@@ -19,7 +19,7 @@ const App = () => {
             <Route path="/" element={<StartPage />} />
             <Route path="login" element={<Login />} />
             <Route path="loadingRedirect" element={<LoadingRedirect />} />
-            <Route exact path="/pageContent" element={<PageContent />} />
+            <Route exact path="pageContent" element={<PageContent />} />
            
           </Routes>
         </Router>

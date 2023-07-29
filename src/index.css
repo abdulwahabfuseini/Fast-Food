@@ -1,17 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Raleway:ital,wght@1,300&family=Victor+Mono:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Raleway:ital,wght@1,300&family=Victor+Mono:wght@100&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
- h2, h3, h4, h5, h6{
-  font-family: 'Bodoni Moda', serif;
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bodoni Moda", serif;
 }
-p, li{
-  font-family: 'Philosopher', sans-serif;
+p,
+li {
+  font-family: "Philosopher", sans-serif;
 }
-header,  h1{
-  font-family: 'Playfair Display', serif;
+header,
+h1 {
+  font-family: "Playfair Display", serif;
 }
 
 @layer base {
@@ -23,7 +29,7 @@ header,  h1{
   }
   header {
     font-family: "Pacifico";
-    Color: #5F696E;
+    color: #5f696e;
   }
   .active {
     @apply text-red-500;
@@ -54,33 +60,46 @@ header,  h1{
   }
 }
 
-
-::-webkit-scrollbar{
-    width: 1rem;
+::-webkit-scrollbar {
+  width: 1rem;
 }
-::-webkit-scrollbar-track{
-    background: #f3f3f3;
-    display: none;
+::-webkit-scrollbar-track {
+  background: #f3f3f3;
+  display: none;
 }
-::-webkit-scrollbar-thumb{
-    background: #4b5563;
-    border: 6px solid transparent;
-    background-clip: content-box;
-    border-radius: 40px;
-
+::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border: 6px solid transparent;
+  background-clip: content-box;
+  border-radius: 40px;
 }
-::-webkit-scrollbar-thumb:hover{
-    border: 5px solid transparent;
+::-webkit-scrollbar-thumb:hover {
+  border: 5px solid transparent;
 }
 
-.delivery{
-    animation: move 8s infinite 6s;
+.delivery {
+  animation: move 8s infinite 4s;
 }
-@keyframes move{
-    from{
-        transform: translateY(-30px);
-    }
-    to{
-        transform: translateY(50px);
-    }
+@keyframes move {
+  0% {
+    transform: translateY(-10px);
+  }
+  80%, 90% {
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.motor {
+  animation: van 8s infinite 6s;
+}
+@keyframes van {
+  from {
+    transform: translateX(10px);
+  }
+  to {
+    transform: translateX(1200px);
+  }
 }

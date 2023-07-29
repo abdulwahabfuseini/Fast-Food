@@ -31,11 +31,12 @@ const User = () => {
         {currentUser ? (
           <img
             src={currentUser.photoURL}
-            alt=""
-            className="cursor-pointer w-8 h-8 rounded-full"
+            alt="avatar"
+            referrerPolicy="no-referrer"
+            className="w-8 h-8 rounded-full cursor-pointer" 
           />
         ) : (
-          <CgUser className="cursor-pointer w-8 h-8" />
+          <CgUser className="w-8 h-8 cursor-pointer" />
         )}
       </div>
       <div>
@@ -44,8 +45,8 @@ const User = () => {
             <Col className="grid place-items-center">
               <img
                 src={currentUser.photoURL}
-                alt=""
-                className="w-16 h-16 pb-2 rounded-full"
+                alt="avatar"
+                className="w-8 h-8 rounded-full cursor-pointer"
               />
               <p>{currentUser.displayName}</p>
               <h4 className="text-lg">{currentUser.email}</h4>

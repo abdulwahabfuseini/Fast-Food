@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Col, Container } from "react-bootstrap";
-import { Button, Card, Checkbox, Form, Input  } from "antd";
+import { Button, Card, Checkbox, Form, Input } from "antd";
 import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../utils/firebase";
+import Google from "../../Assets/images/Social/googlesvg.png";
 
 const Login = () => {
   const [swipe, setSwipe] = useState("SignUp" && "Login");
@@ -18,6 +19,7 @@ const Login = () => {
   const handleSwipe = () => {
     setSwipe((changeForm) => (changeForm === "Login" ? "SignUp" : "Login"));
   };
+
 
   const onFinish = async (values) => {
     setLoading(true);
@@ -180,7 +182,7 @@ const Login = () => {
                 className="cursor-pointer hover:-translate-y-1"
               >
                 <img
-                  src="../images/Social/googlesvg.png"
+                  src={Google}
                   alt="facebook"
                   className="object-cover w-8 h-8 cursor-pointer"
                 />

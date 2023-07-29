@@ -1,3 +1,11 @@
+import facebook from "../images/Social/facebookf.png"
+import twitter from "../images/Social/twittersvg.png"
+import Google from "../images/Social/googlesvg.png"
+import instagram from "../images/Social/insta.png"
+import whatsapp from "../images/Social/whatsapp.png"
+import linkedin from "../images/Social/linkedin.png"
+
+
 export const NavLinks = [
     {
         display: "Home",
@@ -61,12 +69,12 @@ export const FooterLinks = [
  {
     title: "Connect With Us",
     Links: [
-        {media: "../images/Social/facebookf.png" },
-        {media: "../images/Social/twittersvg.png"},
-        {media: "../images/Social/googlesvg.png"},
-        {media: "../images/Social/insta.png"},
-        {media:"../images/Social/whatsapp.png"},
-        {media:"../images/Social/linkedin.png"},
+        {media: facebook },
+        {media: twitter},
+        {media: Google},
+        {media: instagram},
+        {media: whatsapp},
+        {media: linkedin},
     ]
  },
 ]

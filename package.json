@@ -1,7 +1,7 @@
 {
   "name": "fast-food",
   "version": "0.1.0",
-  "homepage": "https://abdulwahabfuseini.github.io/Fast-Foods",
+  "homepage": "http://abdulwahabfuseini.github.io/Fast-Foods",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",

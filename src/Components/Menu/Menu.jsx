@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "reactstrap";
+import pizzasvg from "../../Assets/images/SVG/pizzasvg.png"
+import chickensvg from "../../Assets/images/SVG/thanksgiving.png"
+import shawarmasvg from "../../Assets/images/SVG/shawarmasvg.png"
+import burgersvg from "../../Assets/images/SVG/burgersvg.png"
+import saladsvg from "../../Assets/images/SVG/saladsvg.png"
+
 import {
   BurgerFoodProducts,
   ChickenFoodProducts,
@@ -57,7 +63,7 @@ const Menu = () => {
               filter === "PIZZA" ? "active-tab" : "tab"
             } flex items-center gap-3`}  data-aos="fade-left"
           >
-            <img src="./images/SVG/pizzasvg.png" alt="" className="w-8 h-8" />
+            <img src={pizzasvg} alt="svg" className="w-8 h-8" />
             <h6>Pizza</h6>
           </Button>
           <Button
@@ -66,7 +72,7 @@ const Menu = () => {
               filter === "CHICKEN" ? "active-tab" : "tab"
             } flex items-center gap-3 `}  data-aos="fade-left"
           >
-            <img src="./images/SVG/chickensvg.jpg" alt="" className="w-8 h-8" />
+            <img src={chickensvg} alt="svg" className="w-8 h-8" />
             <h6>Chicken</h6>
           </Button>
           <Button
@@ -76,8 +82,8 @@ const Menu = () => {
             } flex items-center gap-3`}  data-aos="fade-down"
           >
             <img
-              src="./images/SVG/shawarmasvg.jpg"
-              alt=""
+              src={shawarmasvg}
+              alt="svg"
               className="w-8 h-8"
             />
             <h6>Shawarma</h6>
@@ -88,7 +94,7 @@ const Menu = () => {
               filter === "BURGER" ? "active-tab" : "tab"
             } flex items-center gap-3`}  data-aos="fade-right"
           >
-            <img src="./images/SVG/burgersvg.png" alt="" className="w-8 h-8" />
+            <img src={burgersvg} alt="/" className="w-8 h-8" />
             <h6>Burger</h6>
           </Button>
           <Button
@@ -97,7 +103,7 @@ const Menu = () => {
               filter === "SALAD" ? "active-tab" : "tab"
             } flex items-center gap-3`}  data-aos="fade-right"
           >
-            <img src="./images/SVG/saladsvg.png" alt="" className="w-8 h-8" />
+            <img src={saladsvg} alt="svg" className="w-8 h-8" />
             <h6>Salad</h6>
           </Button>
         </Col>

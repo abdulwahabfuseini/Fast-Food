@@ -1,35 +1,81 @@
+import pizza1 from "../images/PIZZA/pizza1.png"
+import pizza2 from "../images/PIZZA/pizza2.png"
+import pizza3 from "../images/PIZZA/pizza3.png"
+import pizza4 from "../images/PIZZA/pizza4.png"
+import pizza5 from "../images/PIZZA/pizza5.png"
+import pizza6 from "../images/PIZZA/pizza6.jpg"
+import Burger1 from "../images/BURGER/burger5.jpg"
+import Burger2 from "../images/BURGER/burger-iii.jpg"
+import Burger3 from "../images/BURGER/burger-iiii.jpg"
+import Burger4 from "../images/BURGER/burger-ii.jpg"
+import Burger5 from "../images/BURGER/burger1.png"
+import Burger6 from "../images/BURGER/burger2.jpg"
+import Burger7 from "../images/BURGER/burger3.jpg"
+import Burger8 from "../images/BURGER/burger4.jpg"
+import Burger9 from "../images/BURGER/burger6.png"
+import Shawarma1 from "../images/SHAWARMA/shawa1.png"
+import Shawarma2 from "../images/SHAWARMA/shawa2.jpg"
+import Shawarma3 from "../images/SHAWARMA/shawa3.png"
+import Shawarma4 from "../images/SHAWARMA/shawarma4.png"
+import Shawarma5 from "../images/SHAWARMA/shawarma5.png"
+import Shawarma6 from "../images/SHAWARMA/shawa5.jpg"
+import Shawarma7 from "../images/SHAWARMA/shawa3.png"
+import Shawarma8 from "../images/SHAWARMA/shawa6.jpg"
+import Chicken1 from "../images/CHICKEN/Gchicken2.jpg"
+import Chicken2 from "../images/CHICKEN/chicken3.jpg"
+import Chicken3 from "../images/CHICKEN/Gchicken3.jpg"
+import Chicken4 from "../images/CHICKEN/Gchicken4.jpg"
+import Chicken5 from "../images/CHICKEN/Gchicken9.png"
+import Chicken6 from "../images/CHICKEN/Gchicken6.jpg"
+import Chicken7 from "../images/CHICKEN/chicken5.jpg"
+import Chicken8 from "../images/CHICKEN/chicken4.jpeg"
+import Chicken9 from "../images/CHICKEN/chicken1.jpg"
+import Chicken10 from "../images/CHICKEN/chicken2.jpg"
+import Salad1 from "../images/SALAD/salad1.png"
+import Salad2 from "../images/SALAD/salad2.jpg"
+import Salad3 from "../images/SALAD/salad3.jpg"
+import Salad4 from "../images/SALAD/salad4.png"
+import Salad5 from "../images/SALAD/salad5.png"
+import plate1 from "../images/FOOD/plate1.jpg"
+import plate2 from "../images/FOOD/plate3.jpg"
+import plate3 from "../images/FOOD/plate4.jpg"
+import plate4 from "../images/FOOD/plate6.png"
+import plate5 from "../images/FOOD/plate7.png"
+
+
+
 export const PizzaFoodProducts = [
     {
       id: 1,
-      cover: "./images/PIZZA/pizza1.png",
+      cover: pizza1,
       name: "Pizza",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 60,
     },
     {
       id: 2,
-      cover: "./images/PIZZA/pizza2.png",
+      cover: pizza2,
       name: "Pizza",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 60,
     },
     {
       id: 3,
-      cover: "./images/PIZZA/pizza3.png",
+      cover: pizza3,
       name: "Pizza",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 60,
     },
     {
       id: 4,
-      cover: "./images/PIZZA/pizza4.png",
+      cover: pizza4,
       name: "Pizza",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 60,
     },
     {
       id: 5,
-      cover: "./images/PIZZA/pizza5.png",
+      cover: pizza5,
       name: "Pizza",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 60,
@@ -39,56 +85,56 @@ export const PizzaFoodProducts = [
   export const BurgerFoodProducts = [
     {
       id: 6,
-      cover: "./images/BURGER/burger5.jpg",
+      cover: Burger1,
       name: "Burger",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 40,
     },
     {
       id: 7,
-      cover: "./images/BURGER/burger-iii.jpg",
+      cover: Burger2,
       name: "Burger",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 40,
     },
     {
       id: 8,
-      cover: "./images/BURGER/burger-iiii.jpg",
+      cover: Burger3,
       name: "Burger",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 40,
     },
     {
       id: 9,
-      cover: "./images/BURGER/burger-ii.jpg",
+      cover: Burger4,
       name: "Burger",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 40,
     },
     {
       id: 10,
-      cover: "./images/BURGER/burger1.png",
+      cover: Burger5,
       name: "Burger",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 40,
     },
     {
       id: 11,
-      cover: "./images/BURGER/burger2.jpg",
+      cover: Burger6,
       name: "Burger",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 40,
     },
     {
       id: 12,
-      cover: "./images/BURGER/burger3.jpg",
+      cover: Burger7,
       name: "Burger",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 40,
     },
     {
       id: 13,
-      cover: "./images/BURGER/burger4.jpg",
+      cover: Burger8,
       name: "Burger",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 40,
@@ -98,56 +144,56 @@ export const PizzaFoodProducts = [
   export const ShawarmaFoodProducts = [
     {
       id: 14,
-      cover: "./images/SHAWARMA/shawarma1.png",
+      cover: Shawarma1,
       name: "Shawarma",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 20,
     },
     {
       id: 15,
-      cover: "./images/SHAWARMA/shawarma2.webp",
+      cover: Shawarma2,
       name: "Shawarma",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 20,
     },
     {
       id: 16,
-      cover: "./images/SHAWARMA/shawarma3.png",
+      cover: Shawarma3,
       name: "Shawarma",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 20,
     },
     {
       id: 17,
-      cover: "./images/SHAWARMA/shawarma4.png",
+      cover: Shawarma4,
       name: "Shawarma",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 20,
     },
     {
       id: 18,
-      cover: "./images/SHAWARMA/shawarma5.png",
+      cover: Shawarma5,
       name: "Shawarma",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 20,
     },
     {
       id: 19,
-      cover: "./images/SHAWARMA/shawa5.jpg",
+      cover: Shawarma6,
       name: "Shawarma",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 20,
     },
     {
       id: 20,
-      cover: "./images/SHAWARMA/shawa3.png",
+      cover: Shawarma7,
       name: "Shawarma",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 20,
     },
     {
       id: 21,
-      cover: "./images/SHAWARMA/shawa6.jpg",
+      cover: Shawarma8,
       name: "Shawarma",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 20,
@@ -157,56 +203,56 @@ export const PizzaFoodProducts = [
   export const ChickenFoodProducts = [
     {
       id: 22,
-      cover: "./images/CHICKEN/chicken1.jpg",
+      cover: Chicken1,
       name: "Chicken",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 50,
     },
     {
       id: 23,
-      cover: "./images/CHICKEN/Gchicken2.jpg",
+      cover: Chicken2,
       name: "Chicken",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 50,
     },
     {
       id: 24,
-      cover: "./images/CHICKEN/Gchicken3.jpg",
+      cover: Chicken3,
       name: "Chicken",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 50,
     },
     {
       id: 25,
-      cover: "./images/CHICKEN/Gchicken4.jpg",
+      cover: Chicken4,
       name: "Chicken",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 50,
     },
     {
       id: 26,
-      cover: "./images/CHICKEN/Gchicken9.png",
+      cover: Chicken5,
       name: "Chicken",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 50,
     },
     {
       id: 27,
-      cover: "./images/CHICKEN/Gchicken6.jpg",
+      cover: Chicken6,
       name: "Chicken",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 50,
     },
     {
       id: 28,
-      cover: "./images/CHICKEN/chicken5.jpg",
+      cover: Chicken7,
       name: "Chicken",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 50,
     },
     {
       id: 29,
-      cover: "./images/CHICKEN/chicken4.jpeg",
+      cover: Chicken8,
       name: "Chicken",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 50,
@@ -216,35 +262,35 @@ export const PizzaFoodProducts = [
   export const SaladFoodProducts = [
     {
       id: 30,
-      cover: "./images/SALAD/salad1.png",
+      cover: Salad1,
       name: "Salad",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 50,
     },
     {
       id: 31,
-      cover: "./images/SALAD/salad2.jpg",
+      cover: Salad2,
       name: "Salad",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 50,
     },
     {
       id: 32,
-      cover: "./images/SALAD/salad3.jpg",
+      cover: Salad3,
       name: "Salad",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 50,
     },
     {
       id: 33,
-      cover: "./images/SALAD/salad4.png",
+      cover: Salad4,
       name: "Salad",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 50,
     },
     {
       id: 34,
-      cover: "./images/SALAD/salad5.png",
+      cover: Salad5,
       name: "Salad",
       desc: " Lorem ipsum, dolor sit amet consectetur",
       price: 50,
@@ -254,84 +300,84 @@ export const PizzaFoodProducts = [
   export const ProductCard = [
     {
       id: 1,
-      cover: "./images/CHICKEN/chicken1.jpg",
+      cover: Chicken9,
       name: "Chicken",
       desc: " Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
       price: 40,
     },
     {
       id: 2,
-      cover: "./images/FOOD/plate1.jpg",
+      cover: plate1,
       name: "Pizza",
       desc: " Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
       price: 20,
     },
     {
       id: 3,
-      cover: "./images/FOOD/plate3.jpg",
+      cover: plate2,
       name: "Chicken",
       desc: " Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
       price: 35,
     },
     {
       id: 4,
-      cover: "./images/FOOD/plate4.jpg",
+      cover: plate3,
       name: "Plate",
       desc: " Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
       price: 45,
     },
     {
       id: 5,
-      cover: "./images/FOOD/plate6.png",
+      cover: plate4,
       name: "Plate",
       desc: " Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
       price: 20,
     },
     {
       id: 6,
-      cover: "./images/FOOD/plate7.png",
+      cover: plate5,
       name: "Plate",
       desc: " Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
       price: 30,
     },
     {
       id: 7,
-      cover: "./images/PIZZA/pizza6.jpg",
+      cover: pizza6,
       name: "Pizza",
       desc: " Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
       price: 40,
     },
     {
       id: 8,
-      cover: "./images/CHICKEN/chicken2.jpg",
+      cover: Chicken10,
       name: "Chicken",
       desc: " Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
       price: 50,
     },
     {
       id: 8,
-      cover: "./images/BURGER/burger6.png",
+      cover: Burger9,
       name: "Burger",
       desc: " Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
       price: 35,
     },
     {
       id: 9,
-      cover: "./images/SHAWARMA/shawarma6.png",
+      cover: Shawarma6,
       name: "shawarma",
       desc: " Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
       price: 40,
     },
     {
       id: 10,
-      cover: "./images/SALAD/salad2.jpg",
+      cover: Salad2,
       name: "salad",
       desc: " Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
       price: 20,
     },
     {
       id: 11,
-      cover: "./images/SALAD/salad1.png",
+      cover: Salad1,
       name: "salad",
       desc: " Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
       price: 20,

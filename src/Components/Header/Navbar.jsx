@@ -4,6 +4,7 @@ import { NavLinks } from "../../Assets/Data/Navigation";
 import Cart from "./Card/Cart";
 import User from "./User";
 import MobileNav from "./MobileNav";
+import Logo from "../../Assets/images/Logo.png"
 
 
 const Navbar = () => {
@@ -24,7 +25,7 @@ const Navbar = () => {
        <MobileNav />
       <div className="text-xl">
         <a href="/">
-          <img src="./images/Logo.png" alt="" className=" w-32 sm:w-40 h-6 cursor-pointer" />
+          <img src={Logo} alt="" className="w-32 h-6 cursor-pointer sm:w-40" />
         </a>
       </div>
       <div>

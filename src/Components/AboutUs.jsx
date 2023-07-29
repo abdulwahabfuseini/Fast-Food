@@ -4,10 +4,10 @@ import { AboutData } from "../Assets/Data/SlideData";
 
 const AboutUs = () => {
   return (
-    <Container className="w-full h-full lg:pt-10 px-3 sm:px-6 lg:px-16" id="about">
+    <Container className="w-full h-full px-3 lg:pt-10 sm:px-6 lg:px-16" id="about">
       <Row>
         {AboutData.map((item, index) => (
-          <Row key={index} className="flex flex-col items-center gap-5 sm:gap-0 lg:flex-row">
+          <Row key={index} className="flex flex-col gap-5 sm:gap-0 lg:flex-row">
             <Col className="w-full lg:w-1/2"  data-aos="fade-right">
               <header className="text-3xl capitalize sm:text-4xl md:text-5xl">{item.title}</header>
               <h1 className="py-2 text-2xl capitalize sm:text-3xl md:text-4xl">{item.subTitle}</h1>
@@ -25,7 +25,7 @@ const AboutUs = () => {
                  }
               </div>
             </Col>
-            <Col className="w-full lg:w-1/2 sm:p-16 lg:p-0"  data-aos="fade-left">
+            <Col className="w-full lg:w-1/2 sm:p-16"  data-aos="fade-left">
               <img src={item.image} alt="AboutImg" className="object-cover w-full h-96"/>
             </Col>
           </Row>

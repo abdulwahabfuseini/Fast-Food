@@ -3,6 +3,8 @@ import emailjs from "@emailjs/browser";
 import { Col, Container, Row } from "reactstrap";
 import { BiShoppingBag } from "react-icons/bi";
 import { Badge, Drawer, Form, message, Button, Input, Checkbox } from "antd";
+import Gif from "../../../Assets/images/SVG/food-delivery1.gif"
+import EmptyCart from "../../../Assets/images/SVG/home1.webp"
 
 import CartItems from "./CartItems";
 import { useDispatch, useSelector } from "react-redux";
@@ -50,19 +52,7 @@ const Cart = () => {
       .then(
         () => {
           setLoading(false);
-          message.success(
-            <>
-              <h1>
-                Thanks for your order your food will be delivery to your
-                doorstep as soon as possible
-              </h1>
-              <img
-                src="./images/SVG/food-delivery1.gif"
-                alt="delivery"
-                className="w-full h-80"
-              />
-            </>
-          );
+          alert("Thanks for your order. Your food will be delivered to your doorstep as soon as possible. Have a nice day and Stay Bless!!!")
           setForm();
         },
         (error) => {
@@ -82,7 +72,7 @@ const Cart = () => {
     <Container className="Relative">
       <Row onClick={() => setOPenCart(!openCart)} className="cursor-pointer ">
         <Badge count={cartProducts.length}>
-          <BiShoppingBag className="cursor-pointer w-8 h-8"/>
+          <BiShoppingBag className="w-8 h-8 cursor-pointer"/>
         </Badge>
       </Row>
       <Drawer
@@ -96,7 +86,7 @@ const Cart = () => {
           <span className="flex flex-col items-center justify-center gap-10 leading-10">
             <h1 className="text-xl font-bold"> Your Cart Card is Empty </h1>
             <img
-              src="../images/SVG/home1.webp"
+              src={EmptyCart}
               alt="order"
               className="w-full"
             />
@@ -138,7 +128,7 @@ const Cart = () => {
                   type="text"
                   name="name"
                   placeholder="Enter Full Name"
-                  className="cursor-pointer h-10"
+                  className="h-10 cursor-pointer"
                   onChange={handleChange}
                 />
               </Form.Item>
@@ -158,7 +148,7 @@ const Cart = () => {
                   type="email"
                   name="email"
                   placeholder="Eg: myname@gmail.com"
-                  className="cursor-pointer h-10"
+                  className="h-10 cursor-pointer"
                   onChange={handleChange}
                 />
               </Form.Item>
@@ -178,7 +168,7 @@ const Cart = () => {
                   type="number"
                   name="number"
                   placeholder="(000) 000 000 0000"
-                  className="cursor-pointer h-10"
+                  className="h-10 cursor-pointer"
                   onChange={handleChange}
                 />
               </Form.Item>
@@ -214,7 +204,7 @@ const Cart = () => {
               </Form.Item>
               <Button
                 htmlType="submit"
-                className="w-full bg-blue-600 h-10"
+                className="w-full h-10 bg-blue-600"
                 type="primary"
               >
                 Submit
