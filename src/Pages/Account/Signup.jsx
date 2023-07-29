@@ -7,10 +7,10 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../utils/firebase";
 import Google from "../../Assets/images/Social/googlesvg.png";
 
-const Login = () => {
+const Signup = () => {
   const [user, setUser] = useState("");
   const [loading, setLoading] = useState("");
-  const { login } = useAuth();
+  const { Signup } = useAuth();
   const navigate = useNavigate();
   const [form] = Form.useForm();
 
@@ -18,7 +18,7 @@ const Login = () => {
     setLoading(true);
     try {
       const { email, password } = values;
-      await login(email, password);
+      await Signup(email, password);
       navigate("/loadingRedirect", { replace: true });
     } catch (error) {
       alert("Failed to Login");
@@ -52,7 +52,7 @@ const Login = () => {
             className="leading-3"
           >
             <header className="pb-2 text-xl font-bold text-center">
-              SIGN IN
+              REGISTER
             </header>
             <Form.Item
               name="email"
@@ -91,21 +91,62 @@ const Login = () => {
                 className="h-12 cursor-pointer"
               />
             </Form.Item>
-            <Col className="flex items-center justify-between mb-8">
-              <Form.Item name="remember" valuePropName="checked" noStyle>
-                <Checkbox>Remember me</Checkbox>
-              </Form.Item>
-              <a className="relative m-r-0" href="/">
-                Forgot password
-              </a>
-            </Col>
+            <Form.Item
+              label="Confirm Password"
+              name="ConfirmPassword"
+              dependencies={["password"]}
+              rules={[
+                {
+                  required: true,
+                  message: "Please Confirm password",
+                },
+                { type: "password" },
+                ({ getFieldValue }) => ({
+                  validator(_, value) {
+                    if (!value || getFieldValue("password") === value) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject("Password don't match");
+                  },
+                }),
+              ]}
+              hasFeedback
+            >
+              <Input.Password
+                type="password"
+                placeholder="Confirm Password"
+                className="h-12 cursor-pointer"
+              />
+            </Form.Item>
+            <Form.Item
+              name="agreement"
+              wrapperCol={{ span: 24 }}
+              valuePropName="checked"
+              rules={[
+                {
+                  validator: (_, value) =>
+                    value
+                      ? Promise.resolve()
+                      : Promise.reject(
+                          "To proceed, You need to agree to our terms and conditions"
+                        ),
+                },
+              ]}
+            >
+              <Checkbox>
+                Agree to our{" "}
+                <a className="no-underline " href="/">
+                  Terms and Conditions
+                </a>
+              </Checkbox>
+            </Form.Item>
             <Button
               disabled={loading}
               type="primary"
               htmlType="submit"
               className="w-full h-12 bg-blue-400 ccursor-pointer"
             >
-              Sign in with Email
+              Sign up with Email
             </Button>
             <p className="w-full my-3 text-lg text-center"> or </p> <br />
             <Col className="flex items-center justify-center gap-5">
@@ -120,9 +161,9 @@ const Login = () => {
                 />
               </span>
             </Col>
-            <Link to="/signup">
+            <Link to="/login">
               <h1 className="py-6 text-lg text-center cursor-pointer text-md hover:underline">
-                Don't have an account yet? <span>Sign up</span>
+                Already have an account? <span>Sign up</span>
               </h1>
             </Link>
           </Form>
@@ -132,4 +173,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
