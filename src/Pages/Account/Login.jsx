@@ -163,8 +163,3 @@ const Login = () => {
 
 export default Login;
 
-// CLIENT ID
-// X0swSlRJdjIwa3M4RmlFM1hSQVY6MTpjaQ
-
-// SCRET
-// Ve3oZVCKHqOJoKA4VgNz1mAbDvS9dHQfUKPuTfvkMDB1y9anEO
