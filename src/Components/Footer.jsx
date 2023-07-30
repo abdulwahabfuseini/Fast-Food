@@ -67,7 +67,7 @@ const Footer = () => {
             />
           </span>{" "}
         </h1>
-        <header className="text-lg italic font-bold text-center text-white sm:text-2xl">Created By: FUSEINI ABDUL WAHAB</header>
+        <header className="text-md italic font-bold text-center text-white sm:text-xl">Created By: FUSEINI ABDUL WAHAB</header>
       </Row>
     </footer>
   );

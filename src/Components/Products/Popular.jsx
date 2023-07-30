@@ -29,6 +29,9 @@ const Popular = () => {
               slidesPerView: 1.3,
             },
             400: {
+              slidesPerView: 1.4,
+            },
+            600: {
               slidesPerView: 2.4,
             },
             768: {

@@ -33,6 +33,9 @@ const Chef = () => {
               slidesPerView: 1.8,
             },
             400: {
+              slidesPerView: 2,
+            },
+            600: {
               slidesPerView: 3,
             },
             768: {

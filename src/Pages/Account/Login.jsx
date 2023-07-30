@@ -41,7 +41,7 @@ const Login = () => {
 
   return (
     <div>
-      <Container className="flex items-center justify-center w-full h-full my-32">
+      <Container className="flex items-center justify-center w-full h-full my-32 px-3">
         <Card className="w-[350px] sm:w-[400px]">
           <Form
             onFinish={onFinish}
@@ -96,7 +96,7 @@ const Login = () => {
                 <Checkbox>Remember me</Checkbox>
               </Form.Item>
               <a className="relative m-r-0" href="/">
-                Forgot password
+                Forgot Password
               </a>
             </Col>
             <Button
@@ -121,7 +121,7 @@ const Login = () => {
               </span>
             </Col>
             <Link to="/signup">
-              <h1 className="py-6 text-lg text-center cursor-pointer text-md hover:underline">
+              <h1 className="py-6 text-md text-center cursor-pointer text-md hover:underline">
                 Don't have an account yet? <span>Sign up</span>
               </h1>
             </Link>
