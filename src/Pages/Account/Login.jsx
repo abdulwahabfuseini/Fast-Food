@@ -3,9 +3,14 @@ import { Col, Container } from "react-bootstrap";
 import { Button, Card, Checkbox, Form, Input } from "antd";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  FacebookAuthProvider,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 import { auth } from "../../utils/firebase";
 import Google from "../../Assets/images/Social/googlesvg.png";
+import FaceBook from "../../Assets/images/Social/facebookf.png";
 
 const Login = () => {
   const [user, setUser] = useState("");
@@ -34,10 +39,24 @@ const Login = () => {
       await signInWithPopup(auth, googleProvider);
       navigate("/loadingRedirect", { replace: true });
     } catch (error) {
-      alert("Failed to create an account");
+      alert("Failed to Login");
     }
     setLoading(false);
   };
+
+  // =------ FaceBook Account =====
+  const facebookProvider = new FacebookAuthProvider();
+  const FacebookLogin = async () => {
+    setLoading(true);
+    try {
+      await signInWithPopup(auth, facebookProvider);
+      navigate("/loadingRedirect", { replace: true });
+    } catch (error) {
+      alert("Failed to Login");
+    }
+    setLoading(false);
+  };
+
 
   return (
     <div>
@@ -119,6 +138,16 @@ const Login = () => {
                   className="object-cover w-8 h-8 cursor-pointer"
                 />
               </span>
+              <span
+                onClick={FacebookLogin}
+                className="cursor-pointer hover:-translate-y-1"
+              >
+                <img
+                  src={FaceBook}
+                  alt="facebook"
+                  className="object-cover w-8 h-8 cursor-pointer"
+                />
+              </span>
             </Col>
             <Link to="/signup">
               <h1 className="py-6 text-md text-center cursor-pointer text-md hover:underline">
@@ -133,3 +162,9 @@ const Login = () => {
 };
 
 export default Login;
+
+// CLIENT ID
+// X0swSlRJdjIwa3M4RmlFM1hSQVY6MTpjaQ
+
+// SCRET
+// Ve3oZVCKHqOJoKA4VgNz1mAbDvS9dHQfUKPuTfvkMDB1y9anEO
