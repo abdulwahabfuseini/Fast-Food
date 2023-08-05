@@ -61,7 +61,7 @@ const Menu = () => {
             onClick={() => setFilter("PIZZA")}
             className={`${
               filter === "PIZZA" ? "active-tab" : "tab"
-            } flex items-center gap-3`}  data-aos="fade-left"
+            } flex items-center gap-3 flex-col sm:flex-row`}  data-aos="fade-left"
           >
             <img src={pizzasvg} alt="svg" className="w-8 h-8" />
             <h6>Pizza</h6>

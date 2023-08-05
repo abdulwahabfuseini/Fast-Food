@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import {
   FacebookAuthProvider,
   GoogleAuthProvider,
+  TwitterAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../../utils/firebase";
@@ -130,7 +131,7 @@ const Login = () => {
             <Col className="flex items-center justify-center gap-5">
               <span
                 onClick={GoogleLogin}
-                className="cursor-pointer hover:-translate-y-1"
+                className="cursor-pointer"
               >
                 <img
                   src={Google}
@@ -140,7 +141,7 @@ const Login = () => {
               </span>
               <span
                 onClick={FacebookLogin}
-                className="cursor-pointer hover:-translate-y-1"
+                className="cursor-pointer"
               >
                 <img
                   src={FaceBook}

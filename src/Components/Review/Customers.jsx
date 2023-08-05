@@ -57,7 +57,7 @@ const Customers = () => {
               return (
                 <SwiperSlide
                   key={index}
-                  className="flex items-center justify-center p-4 pb-8 mb-24 text-center border-2 border-green-100 shadow-md pxt-4 bg-dry"
+                  className="flex items-center justify-center p-4 pb-8 mb-24 text-center border-2 border-green-100 shadow-md bg-dry"
                 >
                   {loading ? (
                     <ScaleLoader

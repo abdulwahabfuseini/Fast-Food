@@ -27,7 +27,7 @@ const StartPage = () => {
             </h1>
             <button
               onClick={openLogin}
-              className="px-4 py-2 my-6 text-lg font-medium text-white bg-green-800 border-2 rounded-lg border-dry hover:ring-4 hover:bg-transparent hover:text-Text"
+              className="px-4 py-2 my-6 text-md font-medium text-white bg-green-800 border-2 rounded-lg border-dry hover:ring-2 hover:bg-transparent hover:text-Text"
             >
               Order Some Food
             </button>

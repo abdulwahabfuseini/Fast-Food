@@ -72,6 +72,25 @@ const Signup = () => {
               REGISTER
             </header>
             <Form.Item
+              name="name"
+              label="Username"
+              rules={[
+                {
+                  required: true,
+                  message: "Please Enter Username",
+                },
+                { type: "text" },
+              ]}
+              hasFeedback
+            >
+              <Input
+                type="text"
+                placeholder="Enter Email Address"
+                className="h-12 cursor-pointer"
+                onChange={(e) => setUser(e.target.value)}
+              />
+            </Form.Item>
+            <Form.Item
               name="email"
               label="Email"
               rules={[
@@ -169,7 +188,7 @@ const Signup = () => {
             <Col className="flex items-center justify-center gap-5">
               <span
                 onClick={GoogleLogin}
-                className="cursor-pointer hover:-translate-y-1"
+                className="cursor-pointer"
               >
                 <img
                   src={Google}
@@ -179,7 +198,7 @@ const Signup = () => {
               </span>
               <span
                 onClick={FacebookLogin}
-                className="cursor-pointer hover:-translate-y-1"
+                className="cursor-pointer"
               >
                 <img
                   src={FaceBook}

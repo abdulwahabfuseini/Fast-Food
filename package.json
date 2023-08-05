@@ -1,11 +1,14 @@
 {
-  "homepage": "https://abdulwahabfuseini.github.io/Fast-Foods",
-  "name": "Fast-Foods",
+  "homepage": "https://abdulwahabfuseini.github.io/Fast-Food",
+  "name": "fast-food",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@hookform/resolvers": "^3.1.1",
+    "@material-ui/icons": "^4.11.3",
+    "@mui/icons-material": "^5.14.3",
+    "@mui/material": "^5.14.3",
     "@react-google-maps/api": "^2.18.1",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
