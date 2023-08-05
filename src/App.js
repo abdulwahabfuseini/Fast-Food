@@ -16,7 +16,7 @@ const App = () => {
   return (
     <div>
       <AuthProvider>
-        <Router basename="/Fast-Food">
+        <Router>
           <Routes>
             <Route exact path="/Fast-Food" element={<StartPage />} />
             <Route path="login" element={<Login />} />
