@@ -18,11 +18,11 @@ const App = () => {
       <AuthProvider>
         <Router>
           <Routes>
-            <Route path="/Fast-Food" element={<StartPage />} />
+            <Route exact path="/Fast-Food" element={<StartPage />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
             <Route path="loadingRedirect" element={<LoadingRedirect />} />
-            <Route exact path="pageContent" element={<PageContent />} />
+            <Route path="pageContent" element={<PageContent />} />
           </Routes>
         </Router>
       </AuthProvider>
