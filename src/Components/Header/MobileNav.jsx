@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import {   Close, MenuOutlined } from "@mui/icons-material";
+import { IconButton } from "@mui/material";
 import { NavLinks } from "../../Assets/Data/Navigation";
 import { Link } from "react-scroll";
 
@@ -10,9 +11,14 @@ const MobileNav = () => {
     <div className="lg:hidden">
       <div onClick={() => setOpenNav(!openNav)}>
         {openNav ? (
-          <FaTimes className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8" />
+          
+          <IconButton sx={{ color: "black" }}>
+          <Close sx={{ width: 32, height: 32 }}/>
+        </IconButton>
         ) : (
-          <FaBars className="w-6 h-6 cursor-pointer sm:w-8 sm:h-8" />
+          <IconButton sx={{ color: "black" }}>
+          <MenuOutlined sx={{ width: 32, height: 32 }}/>
+        </IconButton>
         )}
       </div>
       <div

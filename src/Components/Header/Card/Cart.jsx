@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Col, Container, Row } from "reactstrap";
-import { BiShoppingBag } from "react-icons/bi";
+import { ShoppingBagOutlined } from "@mui/icons-material";
+import { IconButton } from "@mui/material";
 import { Badge, Drawer, Form, message, Button, Input, Checkbox } from "antd";
-import Gif from "../../../Assets/images/SVG/food-delivery1.gif"
-import EmptyCart from "../../../Assets/images/SVG/home1.webp"
-
+import EmptyCart from "../../../Assets/images/SVG/home1.webp";
 import CartItems from "./CartItems";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-scroll";
@@ -52,7 +51,9 @@ const Cart = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Thanks for your order. Your food will be delivered to your doorstep as soon as possible. Have a nice day and Stay Bless!!!")
+          alert(
+            "Thanks for your order. Your food will be delivered to your doorstep as soon as possible. Have a nice day and Stay Bless!!!"
+          );
           setForm();
         },
         (error) => {
@@ -71,9 +72,11 @@ const Cart = () => {
   return (
     <Container className="Relative">
       <Row onClick={() => setOPenCart(!openCart)} className="cursor-pointer ">
-        <Badge count={cartProducts.length}>
-          <BiShoppingBag className="w-8 h-8 cursor-pointer"/>
-        </Badge>
+        <IconButton sx={{ color: "black" }}>
+          <Badge count={cartProducts.length}>
+            <ShoppingBagOutlined sx={{ width: 32, height: 32 }} />
+          </Badge>
+        </IconButton>
       </Row>
       <Drawer
         title="Your Food Cart"
@@ -85,11 +88,7 @@ const Cart = () => {
         {cartProducts.length === 0 && (
           <span className="flex flex-col items-center justify-center gap-10 leading-10">
             <h1 className="text-xl font-bold"> Your Cart Card is Empty </h1>
-            <img
-              src={EmptyCart}
-              alt="order"
-              className="w-full"
-            />
+            <img src={EmptyCart} alt="order" className="w-full" />
             <Link
               to="menu"
               className="p-2 text-lg bg-green-200 rounded-lg"

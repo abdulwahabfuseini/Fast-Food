@@ -7,7 +7,7 @@ const Products = ({ name, price, cover, desc }) => {
 
   return (
     <Container>
-      <Row  className="mb-2 shadow-md bg-dry"  data-aos="fade-right">
+      <Row  className="mb-2 shadow-md bg-dry">
         <img src={cover} alt="" className="w-full h-52" />
         <p className="py-3 text-lg text-center">{name}</p>
         <Col className="flex items-center justify-center gap-2 text-yellow-500">

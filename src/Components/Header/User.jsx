@@ -7,6 +7,9 @@ import { useNavigate } from "react-router-dom";
 import { TbLogout } from "react-icons/tb";
 import { GrSettingsOption } from "react-icons/gr";
 import { BiQuestionMark } from "react-icons/bi";
+import IconButton from "@mui/material/IconButton";
+import Avatar from "@mui/material/Avatar";
+import { PersonOutlined } from "@mui/icons-material";
 
 const User = () => {
   const [openProfile, setOpenProfile] = useState(false);
@@ -29,25 +32,28 @@ const User = () => {
     <>
       <div onClick={() => setOpenProfile(!openProfile)}>
         {currentUser ? (
-          <img
-            src={currentUser.photoURL}
-            alt="avatar"
-            referrerPolicy="no-referrer"
-            className="w-8 h-8 rounded-full cursor-pointer" 
-          />
+          <IconButton>
+            <Avatar sx={{ width: 32, height: 32 }}>
+              <PersonOutlined />
+            </Avatar>
+          </IconButton>
         ) : (
-          <CgUser className="w-8 h-8 cursor-pointer" />
+          <IconButton>
+          <Avatar sx={{ width: 32, height: 32 }}>
+            <PersonOutlined />
+          </Avatar>
+        </IconButton>
         )}
       </div>
       <div>
         {openProfile && (
           <Row className="fixed pt-5 space-y-5 transition-all duration-500 delay-300 bg-white shadow-md sm:right-10 top-20 w-80 right-6">
             <Col className="grid place-items-center">
-              <img
-                src={currentUser.photoURL}
-                alt="avatar"
-                className="w-8 h-8 rounded-full cursor-pointer"
-              />
+              <IconButton>
+                <Avatar sx={{ width: 60, height:60 }}>
+                  <PersonOutlined sx={{ width: 40, height:40 }}/>
+                </Avatar>
+              </IconButton>
               <p>{currentUser.displayName}</p>
               <h4 className="text-lg">{currentUser.email}</h4>
               <button className="px-4 py-2 my-4 border-2 rounded border-Text hover:ring-2">

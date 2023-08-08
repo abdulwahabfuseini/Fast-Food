@@ -6,11 +6,7 @@ import StartPage from "./Pages/StartPage";
 import Login from "./Pages/Account/Login";
 import LoadingRedirect from "./Pages/LoadingRedirect";
 import Signup from "./Pages/Account/Signup";
-import Aos from "aos";
-import "aos/dist/aos.css";
 
-
-Aos.init();
 
 const App = () => {
   return (

@@ -46,11 +46,11 @@ const Menu = () => {
   return (
     <Container className="w-full h-full px-3 py-20 md:py-32 sm:px-6 lg:px-16" id="menu">
       <Row className="relative">
-        <header className="text-3xl leading-normal text-center sm:text-4xl md:7xl"  data-aos="fade-down">
+        <header className="text-3xl leading-normal text-center sm:text-4xl md:7xl">
           Wake up Early <br />
           <span>Eat Fresh & Healthy</span>
         </header>
-        <p className="py-4 text-lg text-center"  data-aos="fade-left">
+        <p className="py-4 text-lg text-center" >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ad
           ratione, nihil <br /> deserunt ullam illo nemo iste repudiandae, nisi
           corporis rem et. Cupiditate quo iure voluptatum <br /> voluptatem
@@ -61,7 +61,7 @@ const Menu = () => {
             onClick={() => setFilter("PIZZA")}
             className={`${
               filter === "PIZZA" ? "active-tab" : "tab"
-            } flex items-center gap-3 flex-col sm:flex-row`}  data-aos="fade-left"
+            } flex items-center gap-3 flex-col sm:flex-row`} 
           >
             <img src={pizzasvg} alt="svg" className="w-8 h-8" />
             <h6>Pizza</h6>
@@ -70,7 +70,7 @@ const Menu = () => {
             onClick={() => setFilter("CHICKEN")}
             className={`${
               filter === "CHICKEN" ? "active-tab" : "tab"
-            } flex items-center gap-3 `}  data-aos="fade-left"
+            } flex items-center gap-3 `} 
           >
             <img src={chickensvg} alt="svg" className="w-8 h-8" />
             <h6>Chicken</h6>
@@ -79,7 +79,7 @@ const Menu = () => {
             onClick={() => setFilter("SHAWARMA")}
             className={`${
               filter === "SHAWARMA" ? "active-tab" : "tab"
-            } flex items-center gap-3`}  data-aos="fade-down"
+            } flex items-center gap-3`}
           >
             <img
               src={shawarmasvg}
@@ -108,7 +108,7 @@ const Menu = () => {
           </Button>
         </Col>
         
-        <Col className="grid grid-cols-2 gap-2 py-10 sm:grid-cols-3 lg:grid-cols-4 sm:gap-3"  data-aos="fade-up">
+        <Col className="grid grid-cols-2 gap-2 py-10 sm:grid-cols-3 lg:grid-cols-4 sm:gap-3">
           {products.map((product, index) => {
             return (
               <Col
