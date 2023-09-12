@@ -3,7 +3,7 @@ import { Col, Container, Row } from "reactstrap";
 import { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ScaleLoader from "react-spinners/ScaleLoader";
-import { ChefInfo } from "../../Assets/Data/SlideData";
+import { ChefInfo } from "../../assets/Data/SlideData";
 
 
 const Chef = () => {
@@ -17,7 +17,7 @@ const Chef = () => {
   }, []);
 
   return (
-    <Container className="w-full h-[480px]  md:h-[600px] pt-10 px-3 sm:px-6 lg:px-16"  data-aos="fade-left">
+    <Container className="w-full h-[480px]  md:h-[600px] pt-10 px-3 sm:px-6 lg:px-16">
       <header className="pb-8 text-3xl text-center capitalize sm:4xl md:6xl">
         Meet Our Chefs
       </header>
@@ -30,16 +30,16 @@ const Chef = () => {
           autoplay={{ delay: 4000, disableOnInteraction: false }}
           breakpoints={{
             0: {
-              slidesPerView: 1.8,
+              slidesPerView: 2,
             },
             400: {
               slidesPerView: 2,
             },
             600: {
-              slidesPerView: 3,
+              slidesPerView: 4,
             },
             768: {
-              slidesPerView: 2.8,
+              slidesPerView: 4,
             },
             1024: {
               slidesPerView: 5.5,
@@ -55,6 +55,7 @@ const Chef = () => {
                 >
                   {loading ? (
                     <ScaleLoader
+                    className="py-20"
                       color="#36d7b7"
                       loading={loading}
                       size={100}
@@ -65,7 +66,7 @@ const Chef = () => {
                       <img
                         src={Chef.image}
                         alt="/chef"
-                        className="object-contain h-52 w-60 md:w-full md:h-64"
+                        className="object-contain h-40 w-60 lg:h-64 sm:h-56"
                       />
                       <h1 className="py-2 text-lg bg-white">{Chef.name}</h1>
                     </Col>

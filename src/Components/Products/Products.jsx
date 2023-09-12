@@ -8,16 +8,17 @@ const Products = ({ name, price, cover, desc }) => {
   return (
     <Container>
       <Row  className="mb-2 shadow-md bg-dry">
-        <img src={cover} alt="" className="w-full h-52" />
+        <img src={cover} alt="" className="w-full h-40 lg:h-48" />
         <p className="py-3 text-lg text-center">{name}</p>
-        <Col className="flex items-center justify-center gap-2 text-yellow-500">
+       <Col className="px-2">
+       <Col className="flex items-center justify-center gap-2 text-yellow-500">
           <FaStar />
           <FaStar />
           <FaStar />
           <FaStarHalfAlt />
           <FaStarHalfAlt />
         </Col>
-        <p className="py-2 text-center">{desc}</p>
+        <p className="py-2 text-center truncate">{desc}</p>
         <Col className="flex items-center justify-between px-6 py-3">
           <h5 className="text-xl font-bold text-yellow-400">${price}.00</h5>
           <button onClick={() => setFill(!fill)}>
@@ -28,6 +29,8 @@ const Products = ({ name, price, cover, desc }) => {
             )}
           </button>
         </Col>
+       </Col>
+        
       </Row>
     </Container>
   );

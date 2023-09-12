@@ -9,7 +9,7 @@ import linkedin from "../images/Social/linkedin.png"
 export const NavLinks = [
     {
         display: "Home",
-        id: "hero"
+        id: "home"
     },
     {
         display: "Popular",
@@ -38,7 +38,7 @@ export const FooterLinks = [
  {
     title: "Quicks Links",
     Links: [
-        {display: "Home", id: "hero" },
+        {display: "Home", id: "home" },
         {display: "About", id: "about" },
         {display: "Popular", id: "popular" },
         {display: "Terms & Conditions", id: "*" },

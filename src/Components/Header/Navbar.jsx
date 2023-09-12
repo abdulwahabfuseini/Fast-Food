@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
-import { NavLinks } from "../../Assets/Data/Navigation";
-import Cart from "./Card/Cart";
+import { NavLinks } from "../../assets/Data/Navigation";
+import Cart from "./card/Cart";
 import User from "./User";
 import MobileNav from "./MobileNav";
-import Logo from "../../Assets/images/Logo.png"
-
+import Logo from "../../assets/images/Logo.png";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
@@ -20,19 +19,23 @@ const Navbar = () => {
     <div
       className={`${
         sticky ? "bg-white shadow-lg h-20" : " bg-submain h-20"
-      } fixed top-0 left-0 flex items-center justify-between py-3 px-3 sm:px-6 w-full z-50`}
+      } fixed top-0 left-0 flex items-center justify-between py-3 px-4 sm:px-6 w-full z-50`}
     >
-       <MobileNav />
       <div className="text-xl">
-        <a href="/">
-          <img src={Logo} alt="" className="w-32 h-6 cursor-pointer sm:w-40" />
-        </a>
+        <img
+          src={Logo}
+          alt=""
+          className="object-contain w-32 h-6 cursor-pointer sm:w-40"
+        />
       </div>
       <div>
         <ul className="items-center hidden gap-6 lg:flex">
           {NavLinks.map((item, index) => {
             return (
-              <li className="text-lg list-none cursor-pointer hover:text-green-700">
+              <li
+                className="text-lg list-none cursor-pointer hover:text-green-700"
+                key={index}
+              >
                 <Link
                   to={item.id}
                   spy={true}
@@ -48,9 +51,10 @@ const Navbar = () => {
           })}
         </ul>
       </div>
-      <div className="flex items-center gap-4 sm:gap-12">
+      <div className="flex items-center gap-2 sm:gap-5">
         <Cart />
         <User />
+        <MobileNav />
       </div>
     </div>
   );

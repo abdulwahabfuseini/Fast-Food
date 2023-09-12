@@ -1,11 +1,11 @@
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
-import { HomeData } from "../../Assets/Data/SlideData";
+import { HomeData } from "../../assets/Data/SlideData";
 import HomeContent from "./HomeContent";
 
 const Hero = () => {
   return (
-    <Container className="w-full h-full px-3 py-32 sm:px-6 lg:px-8" id="hero">
+    <Container className="grid w-full h-full px-3 py-32 sm:px-4" id="home">
       <Row>
         <Col>
           {HomeData.map((items, index) => {

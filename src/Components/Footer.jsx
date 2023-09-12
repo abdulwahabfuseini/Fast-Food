@@ -1,21 +1,21 @@
 import React from "react";
 import { Col, Row } from "reactstrap";
-import { FooterLinks } from "../Assets/Data/Navigation";
-import Background from "../Assets/images/SVG/Slide1.jpg"
-import Logo from "../Assets/images/Logo.png"
-
+import { FooterLinks } from "../assets/Data/Navigation";
+import Background from "../assets/images/SVG/Slide1.jpg";
+import Logo from "../assets/images/Logo.png";
+import { Link } from "react-scroll";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full h-[800px]  sm:h-[650px] lg:h-[480px]">
+    <footer className="relative w-full h-[800px]  sm:h-[700px] lg:h-[500px]">
       <Row>
         <img
           src={Background}
           alt="FootBg"
-          className="object-cover w-full h-[800px]  sm:h-[650px] lg:h-[480px]"
+          className="object-cover w-full h-[800px]  sm:h-[700px] lg:h-[500px]"
         />
       </Row>
-      <Row className="absolute top-0 left-0 w-full h-[800px]  sm:h-[650px] lg:h-[480px] py-8 text-white px-2 sm:px-20 md:px-6 lg:px-40 bg-transparents">
+      <Row className="absolute top-0 left-0 w-full h-[800px]  sm:h-[700px] lg:h-[500px] py-8 text-white px-2 sm:px-20 md:px-6 lg:px-40 bg-transparents">
         <Col className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 place-items-center">
           {FooterLinks.map((footer, index) => {
             return (
@@ -29,8 +29,19 @@ const Footer = () => {
                       link;
                     return (
                       <ul key={index}>
-                        <li className="text-md">
-                          <a href={id}>{display}</a>
+                        <li
+                          className="text-lg list-none cursor-pointer hover:text-green-700"
+                        >
+                          <Link
+                            to={id}
+                            spy={true}
+                            smooth={true}
+                            offset={-50}
+                            duration={500}
+                            activeClass="active"
+                          >
+                            {display}
+                          </Link>
                         </li>
                         <li className="text-md">{location}</li>
                         <li className="text-md">{street}</li>
@@ -47,7 +58,11 @@ const Footer = () => {
                   {footer.Links.map((connect, index) => {
                     return (
                       <Col key={index}>
-                        <img src={connect.media} alt="" className="w-8 sm:w-8" />
+                        <img
+                          src={connect.media}
+                          alt=""
+                          className="w-8 sm:w-8"
+                        />
                       </Col>
                     );
                   })}
@@ -63,11 +78,13 @@ const Footer = () => {
             <img
               src={Logo}
               alt=""
-              className="w-full h-5 sm:h-10 shadow-lg"
+              className="object-contain h-5 w-80 sm:h-10"
             />
           </span>{" "}
         </h1>
-        <header className="text-md italic font-bold text-center text-white sm:text-xl">Created By: FUSEINI ABDUL WAHAB</header>
+        <header className="text-lg font-bold text-center text-white">
+          Created By: F.A.W
+        </header>
       </Row>
     </footer>
   );

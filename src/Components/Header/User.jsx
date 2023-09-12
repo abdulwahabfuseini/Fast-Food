@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { CgUser } from "react-icons/cg";
 import { useAuth } from "../../contexts/AuthContext";
 import { Col, Row } from "reactstrap";
 import { useNavigate } from "react-router-dom";
@@ -9,21 +8,24 @@ import { GrSettingsOption } from "react-icons/gr";
 import { BiQuestionMark } from "react-icons/bi";
 import IconButton from "@mui/material/IconButton";
 import Avatar from "@mui/material/Avatar";
-import { PersonOutlined } from "@mui/icons-material";
+import { signOut } from "firebase/auth";
+import { auth } from "../../utils/firebase";
+import { toast } from "react-toastify";
 
 const User = () => {
   const [openProfile, setOpenProfile] = useState(false);
   const [loading, setLoading] = useState("");
   const navigate = useNavigate();
-  const { currentUser, logout } = useAuth();
+  const { currentUser } = useAuth();
 
   async function handleLogout() {
     setLoading(true);
     try {
-      await logout();
+      await signOut(auth);
       navigate("/login", { replace: true });
+      toast.success("Successfully logged out")
     } catch {
-      alert("Fail to Logout");
+      toast.error("Failed to Logout");
     }
     setLoading(false);
   }
@@ -31,53 +33,55 @@ const User = () => {
   return (
     <>
       <div onClick={() => setOpenProfile(!openProfile)}>
-        {currentUser ? (
+        {currentUser && (
           <IconButton>
-            <Avatar sx={{ width: 32, height: 32 }}>
-              <PersonOutlined />
+            <Avatar sx={{ width: 36, height: 36 }}>
+              <img
+                src={currentUser?.photoURL}
+                alt="avatar"
+                className="object-contain"
+              />
             </Avatar>
           </IconButton>
-        ) : (
-          <IconButton>
-          <Avatar sx={{ width: 32, height: 32 }}>
-            <PersonOutlined />
-          </Avatar>
-        </IconButton>
         )}
       </div>
       <div>
         {openProfile && (
-          <Row className="fixed pt-5 space-y-5 transition-all duration-500 delay-300 bg-white shadow-md sm:right-10 top-20 w-80 right-6">
+          <Row className="fixed w-64 pt-5 space-y-4 transition-all duration-500 delay-300 bg-white shadow-md sm:right-10 top-20 sm:w-80 right-6">
             <Col className="grid place-items-center">
               <IconButton>
-                <Avatar sx={{ width: 60, height:60 }}>
-                  <PersonOutlined sx={{ width: 40, height:40 }}/>
+                <Avatar sx={{ width: 65, height: 65 }}>
+                  <img
+                    src={currentUser?.photoURL}
+                    alt="avatar"
+                    className="object-contain w-20 h-20"
+                  />
                 </Avatar>
               </IconButton>
-              <p>{currentUser.displayName}</p>
-              <h4 className="text-lg">{currentUser.email}</h4>
-              <button className="px-4 py-2 my-4 border-2 rounded border-Text hover:ring-2">
+              <p>{currentUser?.displayName}</p>
+              <h4 className="sm:text-lg">{currentUser?.email}</h4>
+              <button className="p-2 border-2 rounded sm:my-3 sm:text-lg sm:py-2 sm:px-4 border-Text lg:hover:ring-2">
                 Manage Your Account
               </button>
             </Col>
-            <Col className="px-4 space-y-4">
+            <Col className="px-4 space-y-2">
               <span className="flex items-center gap-3">
-                <TbLogout className="w-8 h-8 text-slate-600" />
-                <button onClick={handleLogout} className="text-lg">
+                <TbLogout className="w-6 h-6 sm:h-8 sm:w-8 text-slate-600" />
+                <button onClick={handleLogout} className="sm:text-lg">
                   Logout
                 </button>
               </span>
               <span className="flex items-center gap-3">
-                <GrSettingsOption className="w-8 h-6 text-slate-600" />
-                <button className="text-lg">Account Settings</button>
+                <GrSettingsOption className="w-6 h-6 sm:h-8 text-slate-600" />
+                <button className="sm:text-lg">Account Settings</button>
               </span>
               <span className="flex items-center gap-3">
-                <BiQuestionMark className="w-8 h-8 text-slate-600" />
-                <button className="text-lg">Help</button>
+                <BiQuestionMark className="w-6 h-6 sm:h-8 sm:w-8 text-slate-600" />
+                <button className="sm:text-lg">Help</button>
               </span>
-              <span className="flex gap-3 pt-4 pb-2">
-                <h3 className="text-lg">Privacy Policy</h3> .{" "}
-                <h3 className="text-lg">Terms of Service</h3>
+              <span className="flex py-2 gap-x-2 sm:gap-x-3 sm:pb-2 sm:pt-3">
+                <h3 className="sm:text-lg">Privacy Policy</h3> .{" "}
+                <h3 className="sm:text-lg">Terms of Service</h3>
               </span>
             </Col>
           </Row>

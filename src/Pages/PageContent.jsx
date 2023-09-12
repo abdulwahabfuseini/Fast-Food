@@ -1,14 +1,14 @@
 import React from "react";
-import Navbar from "../Components/Header/Navbar";
-import Hero from "../Components/Home/Hero"
-import Popular from "../Components/Products/Popular";
-import AboutUs from "../Components/AboutUs";
-import Menu from "../Components/Menu/Menu";
-import Review from "../Components/Review/Review";
-import Contact from "../Components/Contact";
-import BackToTop from "../Components/BackToTop";
-import IconAppear from "../Components/IconAppear";
-import Footer from "../Components/Footer";
+import Navbar from "../components/header/Navbar";
+import Hero from "../components/home/Hero"
+import Popular from "../components/products/Popular";
+import AboutUs from "../components/AboutUs";
+import Menu from "../components/menu/Menu";
+import Review from "../components/review/Review";
+import Contact from "../components/Contact";
+import BackToTop from "../components/BackToTop";
+import IconAppear from "../components/IconAppear";
+import Footer from "../components/Footer";
 
 
 const PageContent = () => {

@@ -16,7 +16,7 @@ const MenuItems = ({id, cover, name, price}) => {
   return (
     <Container>
       <Row>
-        <img src={cover} alt="" className="w-full h-32 sm:h-52 " />
+        <img src={cover} alt="" className="w-full sm:h-44 h-28" />
         <h1 className="py-1 text-lg font-bold text-center sm:py-3">{name}</h1>
         <Col>
           <Rate defaultValue={4}/>

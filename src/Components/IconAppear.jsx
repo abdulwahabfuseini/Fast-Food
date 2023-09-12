@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import footchef from "../Assets/images/CHEF/footchef2.png"
+import footchef from "../assets/images/CHEF/footchef2.png"
 
 const IconAppear = () => {
   const [appear, setAppear] = useState(false);

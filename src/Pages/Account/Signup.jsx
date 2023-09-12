@@ -1,222 +1,225 @@
 import React, { useState } from "react";
-import { Col, Container } from "react-bootstrap";
 import { Button, Card, Checkbox, Form, Input } from "antd";
-import { useAuth } from "../../contexts/AuthContext";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { GoogleAuthProvider, signInWithPopup,   FacebookAuthProvider} from "firebase/auth";
 import { auth } from "../../utils/firebase";
-import Google from "../../Assets/images/Social/googlesvg.png";
-import FaceBook from "../../Assets/images/Social/facebookf.png"; 
-
-
+import { storage } from "../../utils/firebase";
+import { db } from "../../utils/firebase";
+import { setDoc, doc } from "firebase/firestore";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { toast } from "react-toastify";
 
 const Signup = () => {
-  const [user, setUser] = useState("");
-  const [loading, setLoading] = useState("");
-  const { Signup } = useAuth();
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const [data, setData] = useState();
   const [form] = Form.useForm();
 
-  const onFinish = async (values) => {
+  const handleSignUp = async (values) => {
     setLoading(true);
     try {
-      const { email, password } = values;
-      await Signup(email, password);
-      navigate("/loadingRedirect", { replace: true });
-    } catch (error) {
-      alert("Failed to Login");
-    }
-    setLoading(false);
-  };
+      const { username, email, password } = values;
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
 
-  // ======= Google Account ========
-  const googleProvider = new GoogleAuthProvider();
-  const GoogleLogin = async () => {
-    setLoading(true);
-    try {
-      await signInWithPopup(auth, googleProvider);
+      const storageRef = ref(storage, `images/${ Date.now() + username}`);
+      const uploadTask = uploadBytesResumable(storageRef, data);
+
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log("Upload is " + progress + "% done");
+        },
+        (error) => {
+          toast.error(error.message);
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+            await updateProfile(user, {
+              displayName: username,
+              photoURL: downloadURL,
+            });
+
+            await setDoc(doc(db, "users", user.uid), {
+              uid: "user.id",
+              displayName: username,
+              email,
+              photoURL: downloadURL,
+            });
+          });
+        }
+      );
       navigate("/loadingRedirect", { replace: true });
+      toast.success("Account created Successfully")
     } catch (error) {
       alert("Failed to create an account");
     }
-    setLoading(false);
+    setLoading(false)
   };
 
-    // =------ FaceBook Account =====
-    const facebookProvider = new FacebookAuthProvider();
-    const FacebookLogin = async () => {
-      setLoading(true);
-      try {
-        await signInWithPopup(auth, facebookProvider);
-        navigate("/loadingRedirect", { replace: true });
-      } catch (error) {
-        alert("Failed to Login");
-      }
-      setLoading(false);
-    };
-  
-
   return (
-    <div>
-      <Container className="flex items-center justify-center w-full h-full my-32">
-        <Card className="w-[350px] sm:w-[400px]">
-          <Form
-            onFinish={onFinish}
-            form={form}
-            name="normal_form"
-            initialValues={{ remember: true }}
-            layout="vertical"
-            className="leading-3"
+    <div className="flex items-center justify-center w-full h-full my-32">
+      <Card className="w-full sm:w-[400px]">
+        <Form
+          onFinish={handleSignUp}
+          form={form}
+          name="normal_form"
+          initialValues={{ remember: true }}
+          layout="vertical"
+          className="leading-3"
+        >
+          <header className="pb-2 text-xl font-bold text-center">
+            REGISTER
+          </header>
+          <Form.Item
+            name="username"
+            label="Username"
+            rules={[
+              {
+                required: true,
+                message: "Please Enter Username",
+              },
+              { type: "text" },
+            ]}
+            hasFeedback
           >
-            <header className="pb-2 text-xl font-bold text-center">
-              REGISTER
-            </header>
-            <Form.Item
-              name="name"
-              label="Username"
-              rules={[
-                {
-                  required: true,
-                  message: "Please Enter Username",
+            <Input
+              type="text"
+              placeholder="Enter Full Name"
+              className="h-12 cursor-pointer"
+              onChange={(e) => setData(e.target.value)}
+            />
+          </Form.Item>
+          <Form.Item
+            name="email"
+            label="Email"
+            rules={[
+              {
+                required: true,
+                message: "Please Enter email",
+              },
+              { type: "email" },
+            ]}
+            hasFeedback
+          >
+            <Input
+              type="email"
+              placeholder="Enter Email Address"
+              className="h-12 cursor-pointer"
+            />
+          </Form.Item>
+          <Form.Item
+            label="Password"
+            name="password"
+            rules={[
+              {
+                required: true,
+                message: "Please Enter password",
+              },
+              { type: "password" },
+            ]}
+            hasFeedback
+          >
+            <Input.Password
+              type="password"
+              placeholder="Enter Password"
+              className="h-12 cursor-pointer"
+            />
+          </Form.Item>
+          <Form.Item
+            label="Confirm Password"
+            name="ConfirmPassword"
+            dependencies={["password"]}
+            rules={[
+              {
+                required: true,
+                message: "Please Confirm password",
+              },
+              { type: "password" },
+              ({ getFieldValue }) => ({
+                validator(_, value) {
+                  if (!value || getFieldValue("password") === value) {
+                    return Promise.resolve();
+                  }
+                  return Promise.reject("Password don't match");
                 },
-                { type: "text" },
-              ]}
-              hasFeedback
-            >
-              <Input
-                type="text"
-                placeholder="Enter Email Address"
-                className="h-12 cursor-pointer"
-                onChange={(e) => setUser(e.target.value)}
-              />
-            </Form.Item>
-            <Form.Item
-              name="email"
-              label="Email"
-              rules={[
-                {
-                  required: true,
-                  message: "Please Enter email",
-                },
-                { type: "email" },
-              ]}
-              hasFeedback
-            >
-              <Input
-                type="email"
-                placeholder="Enter Email Address"
-                className="h-12 cursor-pointer"
-                onChange={(e) => setUser(e.target.value)}
-              />
-            </Form.Item>
-            <Form.Item
-              label="Password"
-              name="password"
-              rules={[
-                {
-                  required: true,
-                  message: "Please Enter password",
-                },
-                { type: "password" },
-              ]}
-              hasFeedback
-            >
-              <Input.Password
-                type="password"
-                placeholder="Enter Password"
-                className="h-12 cursor-pointer"
-              />
-            </Form.Item>
-            <Form.Item
-              label="Confirm Password"
-              name="ConfirmPassword"
-              dependencies={["password"]}
-              rules={[
-                {
-                  required: true,
-                  message: "Please Confirm password",
-                },
-                { type: "password" },
-                ({ getFieldValue }) => ({
-                  validator(_, value) {
-                    if (!value || getFieldValue("password") === value) {
-                      return Promise.resolve();
-                    }
-                    return Promise.reject("Password don't match");
-                  },
-                }),
-              ]}
-              hasFeedback
-            >
-              <Input.Password
-                type="password"
-                placeholder="Confirm Password"
-                className="h-12 cursor-pointer"
-              />
-            </Form.Item>
-            <Form.Item
-              name="agreement"
-              wrapperCol={{ span: 24 }}
-              valuePropName="checked"
-              rules={[
-                {
-                  validator: (_, value) =>
-                    value
-                      ? Promise.resolve()
-                      : Promise.reject(
-                          "To proceed, You need to agree to our terms and conditions"
-                        ),
-                },
-              ]}
-            >
-              <Checkbox>
-                Agree to our{" "}
-                <a className="no-underline " href="/">
-                  Terms and Conditions
-                </a>
-              </Checkbox>
-            </Form.Item>
-            <Button
-              disabled={loading}
-              type="primary"
-              htmlType="submit"
-              className="w-full h-12 bg-blue-400 ccursor-pointer"
-            >
-              Sign up with Email
-            </Button>
-            <p className="w-full my-3 text-lg text-center"> or </p> <br />
-            <Col className="flex items-center justify-center gap-5">
-              <span
-                onClick={GoogleLogin}
-                className="cursor-pointer"
-              >
-                <img
-                  src={Google}
-                  alt="facebook"
-                  className="object-cover w-8 h-8 cursor-pointer"
-                />
-              </span>
-              <span
-                onClick={FacebookLogin}
-                className="cursor-pointer"
-              >
-                <img
-                  src={FaceBook}
-                  alt="facebook"
-                  className="object-cover w-8 h-8 cursor-pointer"
-                />
-              </span>
-            </Col>
-            <Link to="/login">
-              <h1 className="py-6 text-lg text-center cursor-pointer text-md hover:underline">
-                Already have an account? <span>Sign up</span>
-              </h1>
-            </Link>
-          </Form>
-        </Card>
-      </Container>
+              }),
+            ]}
+            hasFeedback
+          >
+            <Input.Password
+              type="password"
+              placeholder="Confirm Password"
+              className="h-12 cursor-pointer"
+            />
+          </Form.Item>
+          <Form.Item>
+            <input
+              type="file"
+              onChange={(e) => setData(e.target.files[0])}
+              required
+            />
+          </Form.Item>
+          <Form.Item
+            name="agreement"
+            wrapperCol={{ span: 24 }}
+            valuePropName="checked"
+            rules={[
+              {
+                validator: (_, value) =>
+                  value
+                    ? Promise.resolve()
+                    : Promise.reject(
+                        "To proceed, You need to agree to our terms and conditions"
+                      ),
+              },
+            ]}
+          >
+            <Checkbox>
+              Agree to our{" "}
+              <a className="no-underline " href="/">
+                Terms and Conditions
+              </a>
+            </Checkbox>
+          </Form.Item>
+          <Button
+            disabled={loading}
+            type="primary"
+            htmlType="submit"
+            className="w-full h-12 bg-blue-400 ccursor-pointer"
+          >
+             {loading ? (
+                <div className="flex items-center justify-center gap-2">
+                  <ClipLoader color="#36d7b7"
+                    loading={loading}
+                    size={20}
+                    margin={2}
+                    
+                    />
+                  <h6>Loading...</h6>
+                </div>
+              ) : (
+                "Sign up with Email"
+              )}
+           
+          </Button>
+          <Link to="/login">
+            <h1 className="py-6 text-lg text-center cursor-pointer text-md hover:underline">
+              Already have an account? <span>Sign up</span>
+            </h1>
+          </Link>
+        </Form>
+      </Card>
     </div>
   );
 };
 
 export default Signup;
+
+

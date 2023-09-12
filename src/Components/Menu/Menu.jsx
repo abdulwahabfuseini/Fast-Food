@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "reactstrap";
-import pizzasvg from "../../Assets/images/SVG/pizzasvg.png"
-import chickensvg from "../../Assets/images/SVG/thanksgiving.png"
-import shawarmasvg from "../../Assets/images/SVG/shawarmasvg.png"
-import burgersvg from "../../Assets/images/SVG/burgersvg.png"
-import saladsvg from "../../Assets/images/SVG/saladsvg.png"
+import pizzasvg from "../../assets/images/SVG/pizzasvg.png"
+import chickensvg from "../../assets/images/SVG/chicken.png"
+import shawarmasvg from "../../assets/images/SVG/shawarma.png"
+import burgersvg from "../../assets/images/SVG/burgersvg.png"
+import saladsvg from "../../assets/images/SVG/saladsvg.png"
 
 import {
   BurgerFoodProducts,
@@ -12,7 +12,7 @@ import {
   PizzaFoodProducts,
   SaladFoodProducts,
   ShawarmaFoodProducts,
-} from "../../Assets/Data/ProductsData";
+} from "../../assets/Data/ProductsData";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import MenuItems from "./MenuItems";
 
@@ -44,7 +44,7 @@ const Menu = () => {
   }, [filter]);
 
   return (
-    <Container className="w-full h-full px-3 py-20 md:py-32 sm:px-6 lg:px-16" id="menu">
+    <Container className="w-full h-full px-3 py-20 md:py-32 sm:px-12 md:px-8 lg:px-16" id="menu">
       <Row className="relative">
         <header className="text-3xl leading-normal text-center sm:text-4xl md:7xl">
           Wake up Early <br />
@@ -61,7 +61,7 @@ const Menu = () => {
             onClick={() => setFilter("PIZZA")}
             className={`${
               filter === "PIZZA" ? "active-tab" : "tab"
-            } flex items-center gap-3 flex-col sm:flex-row`} 
+            } flex items-center gap-3 `} 
           >
             <img src={pizzasvg} alt="svg" className="w-8 h-8" />
             <h6>Pizza</h6>
@@ -92,7 +92,7 @@ const Menu = () => {
             onClick={() => setFilter("BURGER")}
             className={`${
               filter === "BURGER" ? "active-tab" : "tab"
-            } flex items-center gap-3`}  data-aos="fade-right"
+            } flex items-center gap-3`} 
           >
             <img src={burgersvg} alt="/" className="w-8 h-8" />
             <h6>Burger</h6>
@@ -101,22 +101,23 @@ const Menu = () => {
             onClick={() => setFilter("SALAD")}
             className={`${
               filter === "SALAD" ? "active-tab" : "tab"
-            } flex items-center gap-3`}  data-aos="fade-right"
+            } flex items-center gap-3`} 
           >
             <img src={saladsvg} alt="svg" className="w-8 h-8" />
             <h6>Salad</h6>
           </Button>
         </Col>
         
-        <Col className="grid grid-cols-2 gap-2 py-10 sm:grid-cols-3 lg:grid-cols-4 sm:gap-3">
+        <Col className="grid grid-cols-2 gap-2 py-10 sm:grid-auto-fit-xs sm:gap-4">
           {products.map((product, index) => {
             return (
               <Col
                 key={index}
-                className="relative text-center shadow-md cursor-pointer bg-dry hover:shadow-xl hover:bg-white"
+                className="relative text-center shadow-md cursor-pointer bg-dry lg:hover:shadow-xl hover:bg-white"
               >
                 {loading ? (
                   <ScaleLoader
+                  className="py-20"
                     color="#36d7b7"
                     loading={loading}
                     size={100}

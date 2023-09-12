@@ -1,19 +1,19 @@
 import online from "../images/SVG/onlinesvg.png";
-import service from "../images/SVG/servicesvg.jpg";
+import service from "../images/SVG/service.png";
 import kitchen from "../images/SVG/kitchensvg.png";
 import preserve from "../images/SVG/preservsvg.png";
-import place from "../images/SVG/placesvg.jpeg";
+import place from "../images/SVG/places.png";
 import chef from "../images/SVG/chefsvg.png";
-import Chef1 from "../images/CHEF/chef1.jpg";
+import Chef1 from "../images/CHEF/chef1.png";
 import Chef2 from "../images/CHEF/chef5.png";
 import Chef3 from "../images/CHEF/chef6.png";
-import Chef4 from "../images/CHEF/chef11.webp";
-import Chef5 from "../images/CHEF/chef8.jpg";
+import Chef4 from "../images/CHEF/chef11.png";
+import Chef5 from "../images/CHEF/chef8.png";
 import Chef6 from "../images/CHEF/chef12.png";
 import Chef7 from "../images/CHEF/chef7.png";
-import Chef8 from "../images/CHEF/chef10.jpg";
+import Chef8 from "../images/CHEF/chef10.png";
 import Chef9 from "../images/CHEF/chef9.png";
-import Chef10 from "../images/CHEF/chef9.jpg";
+import Chef10 from "../images/CHEF/chef9.png";
 import Chef11 from "../images/CHEF/chef4.png";
 
 export const HomeData = [

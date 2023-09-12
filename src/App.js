@@ -1,11 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
-import PageContent from "./Pages/PageContent";
-import StartPage from "./Pages/StartPage";
-import Login from "./Pages/Account/Login";
-import LoadingRedirect from "./Pages/LoadingRedirect";
-import Signup from "./Pages/Account/Signup";
+import PageContent from "./pages/PageContent";
+import StartPage from "./pages/StartPage";
+import Login from "./pages/account/Login";
+import Signup from "./pages/account/Signup";
+import LoadingRedirect from "./pages/LoadingRedirect";
+
+
+import Aos from "aos";
+import "aos/dist/aos.css";
+
+
+Aos.init();
 
 
 const App = () => {
@@ -14,11 +21,11 @@ const App = () => {
       <AuthProvider>
         <Router>
           <Routes>
-            <Route exact path="/Fast-Food" element={<StartPage />} />
+            <Route exact path="/" element={<StartPage />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
             <Route path="loadingRedirect" element={<LoadingRedirect />} />
-            <Route path="pageContent" element={<PageContent />} />
+            <Route path="fastfood" element={<PageContent />} />
           </Routes>
         </Router>
       </AuthProvider>

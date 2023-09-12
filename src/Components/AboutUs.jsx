@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
-import { AboutData } from "../Assets/Data/SlideData";
+import { AboutData } from "../assets/Data/SlideData";
 
 const AboutUs = () => {
   return (
@@ -26,7 +26,7 @@ const AboutUs = () => {
               </div>
             </Col>
             <Col className="w-full lg:w-1/2 sm:p-16"  data-aos="fade-left">
-              <img src={item.image} alt="AboutImg" className="object-cover w-full h-96"/>
+              <img src={item.image} alt="AboutImg" className="object-cover w-full h-full"/>
             </Col>
           </Row>
         ))}

@@ -1,50 +1,52 @@
 import React, { useState } from "react";
-import {   Close, MenuOutlined } from "@mui/icons-material";
+import { MenuOutlined } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
-import { NavLinks } from "../../Assets/Data/Navigation";
+import { NavLinks } from "../../assets/Data/Navigation";
 import { Link } from "react-scroll";
+import { Drawer } from "antd";
 
 const MobileNav = () => {
   const [openNav, setOpenNav] = useState(false);
 
   return (
     <div className="lg:hidden">
-      <div onClick={() => setOpenNav(!openNav)}>
-        {openNav ? (
-          
-          <IconButton sx={{ color: "black" }}>
-          <Close sx={{ width: 32, height: 32 }}/>
+      <div onClick={() => setOpenNav(true)}>
+        <IconButton sx={{ color: "black" }}>
+          <MenuOutlined sx={{ width: 32, height: 32 }} />
         </IconButton>
-        ) : (
-          <IconButton sx={{ color: "black" }}>
-          <MenuOutlined sx={{ width: 32, height: 32 }}/>
-        </IconButton>
-        )}
       </div>
-      <div
-        className={`${
-          openNav ? "-right-0" : "-right-full"
-        } top-20 sm:top-20 bg-white shadow-xl w-full py-6 px-6  h-80 fixed transition-all duration-300`}
+      <Drawer
+        className="absolute left-0 top-20"
+        open={openNav}
+        onClose={() => setOpenNav(false)}
+        closable={false}
+        contentWrapperStyle={{ width: "100%", height: 360 }}
       >
-        <ul className="space-y-4">
-          {NavLinks.map((item, index) => {
-            return (
-              <li className="text-xl list-none hover:text-green-700">
-                <Link
-                  to={item.id}
-                  spy={true}
-                  smooth={true}
-                  offset={-50}
-                  duration={500}
-                  activeClass="active"
+        <nav className="text-Red">
+          <ul className="space-y-6">
+            {NavLinks.map((item, index) => {
+              return (
+                <li
+                  className="text-xl list-none hover:text-green-700"
+                  key={index}
                 >
-                  {item.display}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+                  <Link
+                    to={item.id}
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={500}
+                    activeClass="active"
+                    onClick={() => setOpenNav(false)}
+                  >
+                    {item.display}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </Drawer>
     </div>
   );
 };

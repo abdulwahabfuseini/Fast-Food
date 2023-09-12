@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row } from "reactstrap";
-import { ProductCard } from "../../Assets/Data/ProductsData";
+import { ProductCard } from "../../assets/Data/ProductsData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -11,7 +11,7 @@ const Popular = () => {
   const [prevEl, setPrevtEl] = useState(null);
 
   return (
-    <Container className="w-full h-full lg:pt-10 px-3 sm:px-6 lg:px-16" id="popular">
+    <Container className="w-full h-full px-3 lg:pt-10 sm:px-6 lg:px-16" id="popular">
       <Row>
         <header className="py-6 text-2xl sm:text-4xl">
           Explore Our Popular Dishes
@@ -26,19 +26,19 @@ const Popular = () => {
           className="w-full "
           breakpoints={{
             0: {
-              slidesPerView: 1.3,
+              slidesPerView: 1.6,
             },
             400: {
-              slidesPerView: 1.4,
+              slidesPerView: 2,
             },
             600: {
-              slidesPerView: 2.4,
+              slidesPerView: 3.5,
             },
             768: {
-              slidesPerView: 2.6,
+              slidesPerView: 3.5,
             },
             1024: {
-              slidesPerView: 4,
+              slidesPerView: 4.6,
             },
           }}
         >
