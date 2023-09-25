@@ -15,6 +15,15 @@ import Chef8 from "../images/CHEF/chef10.png";
 import Chef9 from "../images/CHEF/chef9.png";
 import Chef10 from "../images/CHEF/chef9.png";
 import Chef11 from "../images/CHEF/chef4.png";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+  FaWhatsapp,
+  FaYoutube,
+  FaGoogle,
+} from "react-icons/fa";
 
 export const HomeData = [
   {
@@ -82,5 +91,58 @@ export const ChefInfo = [
   {
     image: Chef10,
     name: "Name",
+  },
+];
+
+export const Socialconnect = [
+  {
+    id: 1,
+    icon: <FaFacebookF  className="w-8 h-8 p-2 rounded-lg cursor-pointer sm:w-10 sm:h-10 bg-slate-200 hover:-translate-y-1"/>,
+    title: "fast food",
+    color: "blue",
+    link: "https://web.facebook.com/",
+  },
+  {
+    id: 2,
+    icon: <FaInstagram  className="w-8 h-8 p-2 rounded-lg cursor-pointer sm:w-10 sm:h-10 bg-slate-200 hover:-translate-y-1" />,
+    title: "fast_food",
+    color: "red",
+    link: "https://www.instagram.com/",
+  },
+  {
+    id: 3,
+    icon: <FaTwitter  className="w-8 h-8 p-2 rounded-lg cursor-pointer sm:w-10 sm:h-10 bg-slate-200 hover:-translate-y-1" />,
+    title: "@fast_food",
+    color: "blue",
+    link: "https://twitter.com/home",
+  },
+  {
+    id: 4,
+    icon: <FaGoogle  className="w-8 h-8 p-2 rounded-lg cursor-pointer sm:w-10 sm:h-10 bg-slate-200 hover:-translate-y-1" />,
+    title: "fast food",
+    color: "red",
+    link: "https://www.google.com/search?q=google+search+console&oq=google+search&aqs=chrome.0.35i39i650j69i57j69i64j0i512j69i65l2j69i60l2.50374j0j4&sourceid=chrome&ie=UTF-8",
+  },
+
+  {
+    id: 5,
+    icon: <FaWhatsapp  className="w-8 h-8 p-2 rounded-lg cursor-pointer sm:w-10 sm:h-10 bg-slate-200 hover:-translate-y-1" />,
+    title: "0277984606",
+    color: "green",
+    link: "https://wa.me/277984606",
+  },
+  {
+    id: 6,
+    icon: <FaYoutube  className="w-8 h-8 p-2 rounded-lg cursor-pointer sm:w-10 sm:h-10 bg-slate-200 hover:-translate-y-1" />,
+    title: "fast food",
+    color: "red",
+    link: "https://www.youtube.com/",
+  },
+  {
+    id: 7,
+    icon: <FaLinkedin  className="w-8 h-8 p-2 rounded-lg cursor-pointer sm:w-10 sm:h-10 bg-slate-200 hover:-translate-y-1" />,
+    title: "abdulwahabfuseini78",
+    color: "blue",
+    link: "https://www.linkedin.com/",
   },
 ];

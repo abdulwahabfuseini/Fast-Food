@@ -5,6 +5,13 @@ import chickensvg from "../../assets/images/SVG/chicken.png"
 import shawarmasvg from "../../assets/images/SVG/shawarma.png"
 import burgersvg from "../../assets/images/SVG/burgersvg.png"
 import saladsvg from "../../assets/images/SVG/saladsvg.png"
+import vegetable1 from "../../assets/images/Vegetables/tomato.png"
+import vegetable2 from "../../assets/images/Vegetables/tomatoes.png"
+import vegetable3 from "../../assets/images/Vegetables/lettuce-2.png"
+import vegetable4 from "../../assets/images/Vegetables/greenpeppersvg.png"
+import vegetable5 from "../../assets/images/Vegetables/pepper.png"
+import vegetable6 from "../../assets/images/Vegetables/leaf.png"
+
 
 import {
   BurgerFoodProducts,
@@ -56,12 +63,12 @@ const Menu = () => {
           corporis rem et. Cupiditate quo iure voluptatum <br /> voluptatem
           expedita repudiandae quod!
         </p>
-        <Col className="flex flex-wrap items-center justify-center gap-2 py-6 sm:px-8 md:px-0">
+        <Col className="flex flex-wrap items-center justify-center gap-2">
           <Button
             onClick={() => setFilter("PIZZA")}
             className={`${
               filter === "PIZZA" ? "active-tab" : "tab"
-            } flex items-center gap-3 `} 
+            } flex items-center gap-3`} 
           >
             <img src={pizzasvg} alt="svg" className="w-8 h-8" />
             <h6>Pizza</h6>
@@ -70,7 +77,7 @@ const Menu = () => {
             onClick={() => setFilter("CHICKEN")}
             className={`${
               filter === "CHICKEN" ? "active-tab" : "tab"
-            } flex items-center gap-3 `} 
+            } flex items-center gap-3`} 
           >
             <img src={chickensvg} alt="svg" className="w-8 h-8" />
             <h6>Chicken</h6>
@@ -113,7 +120,7 @@ const Menu = () => {
             return (
               <Col
                 key={index}
-                className="relative text-center shadow-md cursor-pointer bg-dry lg:hover:shadow-xl hover:bg-white"
+                className="relative z-20 text-center shadow-md cursor-pointer bg-dry lg:hover:shadow-xl hover:bg-white"
               >
                 {loading ? (
                   <ScaleLoader
@@ -137,18 +144,14 @@ const Menu = () => {
             );
           })}
         </Col>
-        {/* <Col>
-          <img src="./images/SVG/vegetable2.png" className="absolute left-0 w-20 h-20 top-10" alt="vegetable" />
-          <img src="./images/SVG/vegetable3.png" className="absolute w-16 h-16 -right-16 top-52" alt="vegetable" />
-          <img src="./images/SVG/vegetable4.png" className="absolute -left-20 w-14 h-14 bottom-96" alt="vegetable" />
-          <img src="./images/SVG/vegetable1.png" className="absolute right-0 w-12 h-12 -bottom-16" alt="vegetable" />
-          <img src="./images/SVG/vegetables.png" className="absolute left-0 w-14 h-14 -bottom-16" alt="vegetable" />
-          <img src="./images/SVG/vegetable2.png" className="absolute left-0 w-12 h-12 top-60" alt="vegetable" />
-          <img src="./images/SVG/saladleafsvg.jpeg" className="absolute right-0 w-20 h-20 top-10" alt="vegetable" />
-          <img src="./images/SVG/pepper.png" className="absolute w-12 h-12 top-96 -right-16" alt="vegetable" />
-          <img src="./images/SVG/letucesvg.png" className="absolute h-14 w-14 -left-20 top-60" alt="vegetable" />
-          <img src="./images/SVG/carrotsvg.png" className="absolute w-12 h-12 -left-20 top-96" alt="vegetable" />
-        </Col> */}
+        <Col>
+          <img src={vegetable1} className="absolute object-contain w-16 h-14 sm:h-24 sm:w-24 sm:left-10 top-2 lg:top-10" alt="vegetable" />
+          <img src={vegetable2} className="absolute right-0 object-contain w-16 h-14 sm:h-24 sm:w-24 sm:right-10 top-2 lg:top-10" alt="vegetable" />
+          <img src={vegetable3} className="absolute object-contain w-16 -left-8 h-14 sm:h-32 sm:w-32 sm:-left-24 top-32 lg:top-48" alt="vegetable" />
+          <img src={vegetable4} className="absolute object-contain w-16 -right-6 h-14 sm:h-24 sm:w-24 sm:-right-12 top-32 lg:top-48" alt="vegetable" />
+          <img src={vegetable5} className="absolute object-contain w-16 h-14 sm:h-32 sm:w-32 -bottom-6 sm:-left-24" alt="vegetable" />
+          <img src={vegetable6} className="absolute right-0 w-16 h-14 sm:h-24 sm:w-24 -bottom-4 object-6contain sm:-right-10" alt="vegetable" />
+        </Col>
       </Row>
     </Container>
   );

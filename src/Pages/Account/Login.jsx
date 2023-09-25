@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Col, Container } from "react-bootstrap";
-import { Button, Card, Checkbox, Form, Input } from "antd";
+import { Button, Card, Checkbox, Form, Input, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import {
   GoogleAuthProvider,
@@ -11,8 +11,8 @@ import {
 import { auth } from "../../utils/firebase";
 import Google from "../../assets/images/Social/googlesvg.png";
 import FaceBook from "../../assets/images/Social/facebookf.png";
-
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { ClipLoader } from "react-spinners";
 
 
@@ -33,9 +33,12 @@ const Login = () => {
       );
       const user = userCredential.user;
       navigate("/loadingRedirect", { replace: true });
-      toast.success("Successfully logged in");
+      message.success("Successfully Logged in")
     } catch (error) {
-      alert("Failed to Login");
+      toast.error("Ooops!!! failed to Login", {
+        position: "top-right",
+        theme: "colored",
+      })
     }
     setLoading(false);
   };
@@ -47,9 +50,12 @@ const Login = () => {
     try {
       await signInWithPopup(auth, googleProvider);
       navigate("/loadingRedirect", { replace: true });
-      toast.success("Successfully logged in");
+      message.success("Successfully Logged in")
     } catch (error) {
-      alert("Failed to Login");
+      toast.error("Ooops!!! failed to Login", {
+        position: "top-right",
+        theme: "colored",
+      })
     }
     setLoading(false);
   };
@@ -61,15 +67,18 @@ const Login = () => {
     try {
       await signInWithPopup(auth, facebookProvider);
       navigate("/loadingRedirect", { replace: true });
-      toast.success("Successfully logged in");
+      message.success("Successfully Logged in")
     } catch (error) {
-      alert("Failed to Login");
+      toast.error("Ooops!!! failed to Login", {
+        position: "top-right",
+        theme: "colored",
+      })
     }
     setLoading(false);
   };
 
   return (
-    <div>
+    <>
       <Container className="grid w-full h-full px-3 pt-32 sm:place-items-center ">
         <Card className="w-full sm:w-[400px]">
           <Form
@@ -175,7 +184,8 @@ const Login = () => {
           </Form>
         </Card>
       </Container>
-    </div>
+      <ToastContainer />
+    </>
   );
 };
 

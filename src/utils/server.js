@@ -8,11 +8,12 @@
 //   npm install stripe
 //   npm install express
 //
-// 3) Run the server on http://localhost:4242
+// 3) Run the server on http://localhost:3000
 //   node server.js
 
 // The library needs to be configured with your account's secret key.
 // Ensure the key is kept out of any version control system you might be using.
+
 const stripe = require('stripe')(process.env.REACT_APP_STRIPE_API_KEY);
 const express = require('express');
 const app = express();
@@ -40,4 +41,4 @@ app.post('/webhook', express.raw({type: 'application/json'}), (request, response
   response.send();
 });
 
-app.listen(4242, () => console.log('Running on port 4242'));
+app.listen(3000, () => console.log('Running on port 3000'));

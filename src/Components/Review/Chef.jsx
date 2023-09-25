@@ -17,7 +17,7 @@ const Chef = () => {
   }, []);
 
   return (
-    <Container className="w-full h-[480px]  md:h-[600px] pt-10 px-3 sm:px-6 lg:px-16">
+    <Container className="w-full h-[400px] sm:h-[480px]  pt-10 px-3 sm:px-6 lg:px-16">
       <header className="pb-8 text-3xl text-center capitalize sm:4xl md:6xl">
         Meet Our Chefs
       </header>

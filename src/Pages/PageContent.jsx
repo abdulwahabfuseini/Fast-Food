@@ -9,6 +9,9 @@ import Contact from "../components/Contact";
 import BackToTop from "../components/BackToTop";
 import IconAppear from "../components/IconAppear";
 import Footer from "../components/Footer";
+import Reserve from "../components/reserveTable/Reserve";
+import Download from "../components/Download";
+
 
 
 const PageContent = () => {
@@ -18,8 +21,10 @@ const PageContent = () => {
       <Hero />
       <Popular />
       <AboutUs />
+      <Reserve />
       <Menu />
       <Review />
+      <Download />
       <Contact />
       <BackToTop />
       <IconAppear />

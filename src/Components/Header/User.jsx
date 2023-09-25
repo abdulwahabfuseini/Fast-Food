@@ -10,11 +10,13 @@ import IconButton from "@mui/material/IconButton";
 import Avatar from "@mui/material/Avatar";
 import { signOut } from "firebase/auth";
 import { auth } from "../../utils/firebase";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { message } from "antd";
 
 const User = () => {
   const [openProfile, setOpenProfile] = useState(false);
-  const [loading, setLoading] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { currentUser } = useAuth();
 
@@ -23,9 +25,12 @@ const User = () => {
     try {
       await signOut(auth);
       navigate("/login", { replace: true });
-      toast.success("Successfully logged out")
-    } catch {
-      toast.error("Failed to Logout");
+      message.success("Successfully Logged out")
+    } catch (error) {
+      toast.error("Ooops!!! failed to Logout", {
+        position: "top-right",
+        theme: "colored",
+      })
     }
     setLoading(false);
   }
@@ -87,6 +92,7 @@ const User = () => {
           </Row>
         )}
       </div>
+      <ToastContainer />
     </>
   );
 };

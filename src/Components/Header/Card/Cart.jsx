@@ -10,6 +10,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-scroll";
 import { cartActions } from "../../../store/cartSlice";
 import TextArea from "antd/es/input/TextArea";
+import { FaArrowRight } from "react-icons/fa";
+
 
 const Cart = () => {
   const [openCart, setOPenCart] = useState(false);
@@ -17,6 +19,7 @@ const Cart = () => {
   const [loading, setLoading] = useState(false);
   const cartProducts = useSelector((state) => state.cart.itemsList);
   // const [Form] = Form.useForm();
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -30,6 +33,10 @@ const Cart = () => {
   };
 
   const dispatch = useDispatch();
+
+  const ClearCart = () => {
+    dispatch(cartActions.ClearAllItems());
+  };
 
   const onFinish = (values) => {
     dispatch(cartActions.ClearAllItems());
@@ -88,10 +95,14 @@ const Cart = () => {
         {cartProducts.length === 0 && (
           <span className="flex flex-col items-center justify-center gap-10 leading-10">
             <h1 className="text-xl font-bold"> Your Cart Card is Empty </h1>
-            <img src={EmptyCart} alt="order" className="w-full" />
+            <img
+              src={EmptyCart}
+              alt="order"
+              className="object-contain w-full h-44 sm:h-80"
+            />
             <Link
               to="menu"
-              className="p-2 text-lg bg-green-200 rounded-lg"
+              className="p-2 text-lg text-white bg-green-400 rounded-lg"
               onClick={() => setOPenCart(false)}
             >
               Order Some Food
@@ -238,11 +249,38 @@ const Cart = () => {
         {openForm ? (
           ""
         ) : (
-          <Col className="fixed bottom-0 right-0 flex items-center justify-between row-span-1 py-5 px-4 m-0 text-lg font-bold text-white bg-green-400 w-full sm:w-[450px] z-20">
-            <button onClick={() => setOpenForm(true)}>
+          <Col
+            className={`${
+              cartProducts.length === 0
+                ? "hidden"
+                : "fixed bottom-0 right-0  py-3 px-4 mt-2  w-full sm:w-[450px] z-20 bg-white text-black border-t-2 leading-10"
+            }`}
+          >
+            <Col className="flex items-center justify-between text-lg font-bold">
+              <h4>Subtotal</h4>
+              <p>${total}.00</p>
+            </Col>
+            <Button
+              disabled={loading}
+              onClick={() => setOpenForm(true)}
+              className="w-full h-12 text-lg text-center text-white bg-green-500"
+            >
               Proceed for Checkout
-            </button>
-            <p>${total}.00</p>
+            </Button>
+            <Col className="flex items-center justify-between pt-2">
+              <Button
+                onClick={ClearCart}
+                className="h-10 text-white bg-red-600"
+              >
+                Clear Cart
+              </Button>
+              <Link to="menu" onClick={() => setOPenCart(false)}>
+                <button className="flex items-center justify-center w-full gap-2 pt-2 text-base">
+                  or <span className="text-green-600 ">Continue Shopping </span>
+                  <FaArrowRight className="text-green-700" />
+                </button>
+              </Link>
+            </Col>
           </Col>
         )}
       </Drawer>

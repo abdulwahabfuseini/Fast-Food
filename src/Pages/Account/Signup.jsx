@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Card, Checkbox, Form, Input } from "antd";
+import { Button, Card, Checkbox, Form, Input, message } from "antd";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../utils/firebase";
@@ -7,7 +7,9 @@ import { storage } from "../../utils/firebase";
 import { db } from "../../utils/firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ClipLoader } from "react-spinners";
 
 const Signup = () => {
   const [loading, setLoading] = useState(false);
@@ -56,15 +58,19 @@ const Signup = () => {
         }
       );
       navigate("/loadingRedirect", { replace: true });
-      toast.success("Account created Successfully")
+      message.success("Account created successfully")
     } catch (error) {
-      alert("Failed to create an account");
+      toast.error("Ooops!!! failed to create an account", {
+        position: "top-right",
+        theme: "colored",
+      })
     }
     setLoading(false)
   };
 
   return (
-    <div className="flex items-center justify-center w-full h-full my-32">
+    <>
+     <div className="flex items-center justify-center w-full h-full my-32">
       <Card className="w-full sm:w-[400px]">
         <Form
           onFinish={handleSignUp}
@@ -123,6 +129,7 @@ const Signup = () => {
                 message: "Please Enter password",
               },
               { type: "password" },
+              {min: 7},
             ]}
             hasFeedback
           >
@@ -142,6 +149,7 @@ const Signup = () => {
                 message: "Please Confirm password",
               },
               { type: "password" },
+              {min: 7},
               ({ getFieldValue }) => ({
                 validator(_, value) {
                   if (!value || getFieldValue("password") === value) {
@@ -217,6 +225,8 @@ const Signup = () => {
         </Form>
       </Card>
     </div>
+      <ToastContainer />
+    </>
   );
 };
 

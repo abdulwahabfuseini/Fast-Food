@@ -51,7 +51,7 @@ const Navbar = () => {
           })}
         </ul>
       </div>
-      <div className="flex items-center gap-2 sm:gap-5">
+      <div className="flex items-center gap-2">
         <Cart />
         <User />
         <MobileNav />

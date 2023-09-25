@@ -1,13 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-  FaWhatsapp,
-  FaYoutube,
-} from "react-icons/fa";
+import { Socialconnect } from "../assets/Data/SlideData";
+import { Tooltip } from "antd";
 
 const Contact = () => {
   return (
@@ -16,7 +10,7 @@ const Contact = () => {
       id="contact"
     >
       <header className="text-3xl text-center ">LOCATE US</header>
-      <div className="flex flex-col-reverse gap-10 pt-8 lg:flex-row">
+      <div className="flex flex-col-reverse gap-10 pt-8 lg:flex-row" data-aos="fade-right">
         <Row className="w-full lg:w-2/5">
           <Col>
             <h1 className="pb-2 text-xl font-bold">Visit our loaction</h1>
@@ -35,20 +29,26 @@ const Contact = () => {
           </Col>
           <Col>
             <h1 className="pb-2 text-lg font-bold">Follow Us</h1>
-            <Col className="flex items-center gap-4 pt-2">
-              <FaFacebookF className="w-8 h-8 p-2 rounded-lg cursor-pointer sm:w-10 sm:h-10 bg-slate-200 hover:-translate-y-1" />
-              <FaTwitter className="w-8 h-8 p-2 rounded-lg cursor-pointer sm:w-10 sm:h-10 bg-slate-200 hover:-translate-y-1" />
-              <FaLinkedin className="w-8 h-8 p-2 rounded-lg cursor-pointer sm:w-10 sm:h-10 bg-slate-200 hover:-translate-y-1" />
-              <FaInstagram className="w-8 h-8 p-2 rounded-lg cursor-pointer sm:w-10 sm:h-10 bg-slate-200 hover:-translate-y-1" />
-              <FaYoutube className="w-8 h-8 p-2 rounded-lg cursor-pointer sm:w-10 sm:h-10 bg-slate-200 hover:-translate-y-1" />
-              <FaWhatsapp className="w-8 h-8 p-2 rounded-lg cursor-pointer sm:w-10 sm:h-10 bg-slate-200 hover:-translate-y-1" />
+            <Col className="flex items-center gap-2 pt-3">
+              {Socialconnect.map((media) => (
+                <Col key={media.id}>
+                  <Tooltip color={media?.color} title={media?.title} key={media.id}>
+                    <a
+                      href={media?.link}
+                      target="blank"
+                    >
+                      {media.icon}
+                    </a>
+                  </Tooltip>
+                </Col>
+              ))}
             </Col>
           </Col>
         </Row>
-        <Row className="w-full lg:w-3/5">
+        <Row className="w-full lg:w-3/5" data-aos="fade-left">
           <Col>
             <iframe
-              title=""
+              title="locate us"
               height="400"
               frameborder="0"
               scrolling="no"

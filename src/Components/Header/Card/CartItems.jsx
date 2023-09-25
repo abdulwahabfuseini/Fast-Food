@@ -29,7 +29,7 @@ const CartItems = ({id,  name, cover, price, quantity, totalPrice }) => {
     <Container>
       <Row className="flex items-center justify-between pb-1 my-2 border-b-2 border-b-green-200">
         <Col>
-          <img src={cover} alt="" className="w-24 h-24" />
+          <img src={cover} alt="" className="h-24 p-2 border-2 w-28" />
         </Col>
         <Col className="text-center">
           <p className="text-lg">{name}</p>

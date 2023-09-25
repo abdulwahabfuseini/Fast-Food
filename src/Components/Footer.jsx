@@ -4,6 +4,7 @@ import { FooterLinks } from "../assets/Data/Navigation";
 import Background from "../assets/images/SVG/Slide1.jpg";
 import Logo from "../assets/images/Logo.png";
 import { Link } from "react-scroll";
+import { Tooltip } from "antd";
 
 const Footer = () => {
   return (
@@ -29,9 +30,7 @@ const Footer = () => {
                       link;
                     return (
                       <ul key={index}>
-                        <li
-                          className="text-lg list-none cursor-pointer hover:text-green-700"
-                        >
+                        <li className="text-lg list-none cursor-pointer hover:text-green-700">
                           <Link
                             to={id}
                             spy={true}
@@ -58,11 +57,15 @@ const Footer = () => {
                   {footer.Links.map((connect, index) => {
                     return (
                       <Col key={index}>
-                        <img
-                          src={connect.media}
-                          alt=""
-                          className="w-8 sm:w-8"
-                        />
+                        <Tooltip color={connect?.color} title={connect?.title} key={connect.id} >
+                          <a href={connect?.link} target="blank">
+                            <img
+                              src={connect.media}
+                              alt=""
+                              className="w-8 sm:w-8"
+                            />
+                          </a>
+                        </Tooltip>
                       </Col>
                     );
                   })}
@@ -82,9 +85,9 @@ const Footer = () => {
             />
           </span>{" "}
         </h1>
-        <header className="text-lg font-bold text-center text-white">
+        <p className="text-lg font-bold text-center text-white">
           Created By: F.A.W
-        </header>
+        </p>
       </Row>
     </footer>
   );

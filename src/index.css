@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Raleway:ital,wght@1,300&family=Victor+Mono:wght@100&display=swap");
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,17 +12,19 @@ h5,
 h6 {
   font-family: "Bodoni Moda", serif;
 }
-p,
-li {
-  font-family: "Philosopher", sans-serif;
-}
+
 header,
 h1 {
   font-family: "Playfair Display", serif;
 }
 
 @layer base {
-  h1 {
+  p,
+  li {
+    font-family: "Philosopher", sans-serif;
+  }
+  h1,
+  ul {
     font-family: "Pacifico";
   }
   h2 {
@@ -84,7 +87,8 @@ h1 {
   0% {
     transform: translateY(-10px);
   }
-  80%, 90% {
+  80%,
+  90% {
     transform: translateY(100px);
   }
   100% {
