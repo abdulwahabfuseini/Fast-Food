@@ -20,7 +20,7 @@ const ReserveForm = () => {
   const handleSubmit = (values) => {
     console.log("Received values of form:", values);
     form.resetFields();
-    alert("Thanks for reserving a table, we will love to see you at the exact time.")
+    alert("Thanks for reserving a table, we would love to see you at the exact time.")
   };
 
   const handleChange = (value) => {
