@@ -7,7 +7,7 @@ const StartPage = () => {
   const navigate = useNavigate();
 
   const openLogin = () => {
-    navigate("/login", { replace: true });
+    navigate("/signup", { replace: true });
   };
   return (
     <Container className="flex items-center justify-center w-full h-full px-3 bg-white ">

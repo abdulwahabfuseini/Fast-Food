@@ -5,10 +5,9 @@ import {
   Form,
   Input,
   Select,
+  Space,
   TimePicker,
 } from "antd";
-
-
 
 const onChange = (time, timeString) => {
   console.log(time, timeString);
@@ -20,7 +19,9 @@ const ReserveForm = () => {
   const handleSubmit = (values) => {
     console.log("Received values of form:", values);
     form.resetFields();
-    alert("Thanks for reserving a table, we would love to see you at the exact time.")
+    alert(
+      "Thanks for reserving a table, we would love to see you at the exact time."
+    );
   };
 
   const handleChange = (value) => {
@@ -91,8 +92,8 @@ const ReserveForm = () => {
             size="large"
             labelInValue
             defaultValue={{
-              value: "Reservation for 2",
-              label: "Reservation for 2",
+              value: "Select Number of people",
+              label: "Select Number of people",
             }}
             style={{
               width: "100%",
@@ -123,14 +124,16 @@ const ReserveForm = () => {
           name="date"
           rules={[{ required: true, message: "Please Select Date" }]}
         >
-          <DatePicker
-            name="date"
-            size="large"
-            style={{
-              width: 230,
-              boxShadow: "none"
-            }}
-          />
+          <Space wrap>
+            <DatePicker
+              name="date"
+              size="large"
+              style={{
+                width: 230,
+                boxShadow: "none",
+              }}
+            />
+          </Space>
         </Form.Item>
         <Form.Item
           name="time"
@@ -139,22 +142,19 @@ const ReserveForm = () => {
             { type: "date" },
           ]}
         >
-          <TimePicker
-            name="time"
-            type="default"
-            className="w-full"
-            use12Hours
-            onChange={onChange}
-            size="large"
-            footer={[
-              <Button key="ok" type="primary" className="bg-red-700">
-            Submit
-          </Button>,
-            ]}
-            style={{
-              width: 230,
-            }}
-          />
+          <Space wrap>
+            <TimePicker
+              name="time"
+              type="default"
+              className="w-full"
+              use12Hours
+              onChange={onChange}
+              size="large"
+              style={{
+                width: 230,
+              }}
+            />
+          </Space>
         </Form.Item>
         <Button
           type="primary"
@@ -171,6 +171,3 @@ const ReserveForm = () => {
 };
 
 export default ReserveForm;
-
-
-

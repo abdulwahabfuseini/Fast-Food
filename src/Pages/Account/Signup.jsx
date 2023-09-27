@@ -57,7 +57,7 @@ const Signup = () => {
           });
         }
       );
-      navigate("/loadingRedirect", { replace: true });
+      navigate("/login", { replace: true });
       message.success("Account created successfully")
     } catch (error) {
       toast.error("Ooops!!! failed to create an account", {
@@ -70,7 +70,7 @@ const Signup = () => {
 
   return (
     <>
-     <div className="flex items-center justify-center w-full h-full my-32">
+     <div className="flex items-center justify-center w-full h-full my-12">
       <Card className="w-full sm:w-[400px]">
         <Form
           onFinish={handleSignUp}
