@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Button,
-  DatePicker,
-  Form,
-  Input,
-  Select,
-  Space,
-  TimePicker,
-} from "antd";
+import { Button, DatePicker, Form, Input, Select, TimePicker } from "antd";
 
 const onChange = (time, timeString) => {
   console.log(time, timeString);
@@ -124,16 +116,14 @@ const ReserveForm = () => {
           name="date"
           rules={[{ required: true, message: "Please Select Date" }]}
         >
-          <Space wrap>
-            <DatePicker
-              name="date"
-              size="large"
-              style={{
-                width: 230,
-                boxShadow: "none",
-              }}
-            />
-          </Space>
+          <DatePicker
+            name="date"
+            size="large"
+            style={{
+              width: 230,
+              boxShadow: "none",
+            }}
+          />
         </Form.Item>
         <Form.Item
           name="time"
@@ -142,19 +132,17 @@ const ReserveForm = () => {
             { type: "date" },
           ]}
         >
-          <Space wrap>
-            <TimePicker
-              name="time"
-              type="default"
-              className="w-full"
-              use12Hours
-              onChange={onChange}
-              size="large"
-              style={{
-                width: 230,
-              }}
-            />
-          </Space>
+          <TimePicker
+            name="time"
+            type="default"
+            className="w-full"
+            use12Hours
+            onChange={onChange}
+            size="large"
+            style={{
+              width: 230,
+            }}
+          />
         </Form.Item>
         <Button
           type="primary"

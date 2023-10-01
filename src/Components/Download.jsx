@@ -9,7 +9,7 @@ import { FaApple, FaGooglePlay } from "react-icons/fa";
 const Download = () => {
   return (
     <Container
-      className="w-full h-full px-3 mb-16 sm:px-12 md:px-8 lg:px-16"
+      className="w-full h-full px-3 mb-16 sm:px-8 lg:px-12"
       id="download"
     >
       <Row className="flex flex-col items-center mx-auto max-w-7xl sm:flex-row gap-y-6">

@@ -15,7 +15,7 @@ const Reserve = () => {
 
   return (
     <Container
-      className="w-full h-full px-3 py-20 md:py-12 sm:px-12 md:px-8 lg:px-16"
+      className="w-full h-full px-3 py-20 md:py-12 sm:px-6 lg:px-12"
       id="reserve"
     >
       <Row className="flex flex-col items-center max-w-6xl mx-auto sm:flex-row gap-y-6">
