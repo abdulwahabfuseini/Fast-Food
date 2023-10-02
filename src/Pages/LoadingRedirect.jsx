@@ -15,7 +15,7 @@ const LoadingRedirect = () => {
     }, [10000]);
   }, [loading]);
 
-  loading && navigate("/fastfood");
+  loading && navigate("/fastfood", { replace: true })
 
   return (
     <div>
