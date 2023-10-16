@@ -7,10 +7,10 @@ const StartPage = () => {
   const navigate = useNavigate();
 
   const openLogin = () => {
-    navigate("/signup", { replace: true });
+    navigate("/register", { replace: true });
   };
   return (
-    <Container className="flex items-center justify-center w-full h-full px-3 bg-white ">
+    <Container className="flex items-center justify-center w-full h-full px-3 bg-white" data-aos="fade-up">
       <Row className="py-12 md:pt-40 lg:pt-24">
         <Col className="text-center shadow-md">
           <Col>

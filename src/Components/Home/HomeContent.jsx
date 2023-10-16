@@ -22,7 +22,7 @@ const HomeContent = ({ title, mainTitle, subTitle, desc, cover, name }) => {
               />
             </span>
           </h4>
-          <p className="py-6 text-lg sm:w-[80%]">{desc}</p>
+          <p className="py-6 text-lg sm:w-[80%] break-all">{desc}</p>
           <button className="px-4 py-3 text-lg text-white rounded-lg bg-Text">
             <Link to="menu" spy={true} smooth={true} duration={500}>Order Now</Link>
           </button>

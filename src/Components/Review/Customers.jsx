@@ -82,7 +82,7 @@ const Customers = () => {
                             expandable: true,
                             symbol: "Read more",
                           }}
-                          className="pt-3 text-lg"
+                          className="pt-3 text-lg break-all text-left"
                         >{comment.desc}</Typography.Paragraph>
                         <Rate defaultValue={4} />
                       </Col>

@@ -11,7 +11,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ClipLoader } from "react-spinners";
 
-const Signup = () => {
+const Register = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [data, setData] = useState();
@@ -70,7 +70,7 @@ const Signup = () => {
 
   return (
     <>
-     <div className="flex items-center justify-center w-full h-full my-12">
+     <div className="flex items-center justify-center w-full h-full my-12"  data-aos="fade-up">
       <Card className="w-full sm:w-[400px]">
         <Form
           onFinish={handleSignUp}
@@ -200,7 +200,7 @@ const Signup = () => {
             disabled={loading}
             type="primary"
             htmlType="submit"
-            className="w-full h-12 bg-blue-400 ccursor-pointer"
+            className="w-full h-12 bg-blue-400 ccursor-pointer text-lg"
           >
              {loading ? (
                 <div className="flex items-center justify-center gap-2">
@@ -230,6 +230,6 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Register;
 
 

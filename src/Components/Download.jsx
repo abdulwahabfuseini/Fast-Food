@@ -19,7 +19,7 @@ const Download = () => {
             dowload our mobile app <br />
             and order for delicious meal
           </h1>
-          <p className="w-full py-4 sm:w-11/12">
+          <p className="w-full py-4 sm:w-11/12 break-all text-lg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
             praesentium tenetur blanditiis aperiam quidem eius laborum beatae
             tempora nostrum necessitatibus.

@@ -15,17 +15,20 @@ const Reserve = () => {
 
   return (
     <Container
-      className="w-full h-full px-3 py-20 md:py-12 sm:px-6 lg:px-12"
+      className="w-full h-full px-3 py-20 md:py-16 sm:px-6 lg:px-12"
       id="reserve"
     >
-      <Row className="flex flex-col items-center max-w-6xl mx-auto sm:flex-row gap-y-6">
-        <Col data-aos="fade-right" className="w-full sm:w-1/2">
+      <Row className="grid sm:grid-cols-2 lg:grid-cols-5 gap-y-6 gap-x-10 lg:gap-x-20 max-w-7xl mx-auto">
+      <Col data-aos="fade-right" className="w-full lg:col-span-2 order-2 sm:order-1">
+          <img src={reserved} alt="table" className="object-contain w-full h-full" />
+        </Col>
+        <Col data-aos="fade-left" className="w-full lg:col-span-3 order-1 sm:order-2">
           <h1 className="text-2xl capitalize sm:text-3xl lg:text-5xl">
             do you have any dinner <br />
             plan today? reserve <br />
             your table
           </h1>
-          <p className="w-full py-4 sm:w-10/12">
+          <p className="w-full py-4  break-all text-lg lg:w-10/12">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
             praesentium tenetur blanditiis aperiam quidem eius laborum beatae
             tempora nostrum necessitatibus.
@@ -49,9 +52,7 @@ const Reserve = () => {
             </Modal>
           )}
         </Col>
-        <Col data-aos="fade-left" className="w-full sm:w-1/2">
-          <img src={reserved} alt="table" className="object-contain" />
-        </Col>
+       
       </Row>
     </Container>
   );

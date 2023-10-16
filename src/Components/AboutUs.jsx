@@ -11,7 +11,7 @@ const AboutUs = () => {
             <Col className="w-full lg:w-1/2"  data-aos="fade-right">
               <header className="text-3xl capitalize sm:text-4xl md:text-5xl">{item.title}</header>
               <h1 className="py-2 text-2xl capitalize sm:text-3xl md:text-4xl">{item.subTitle}</h1>
-              <p className="text-lg">{item.desc}</p>
+              <p className="text-lg break-all">{item.desc}</p>
               <div  className="grid grid-cols-2 gap-1 py-8 space-y-2 md:gap-3 sm:grid-cols-3 lg:grid-cols-2">
                  {
                   item.service.map((value, index) => (

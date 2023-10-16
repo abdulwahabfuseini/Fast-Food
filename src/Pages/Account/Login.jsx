@@ -79,7 +79,7 @@ const Login = () => {
 
   return (
     <>
-      <Container className="grid w-full h-full px-3 pt-32 sm:place-items-center ">
+      <Container className="grid w-full h-full px-3 pt-32 sm:place-items-center " data-aos="fade-down">
         <Card className="w-full sm:w-[400px]">
           <Form
             onFinish={onFinish}
@@ -141,7 +141,7 @@ const Login = () => {
               disabled={loading}
               type="primary"
               htmlType="submit"
-              className="w-full h-12 bg-blue-400 ccursor-pointer"
+              className="w-full h-12 bg-blue-400 ccursor-pointer text-lg"
             >
               {loading ? (
                 <div className="flex items-center justify-center gap-2">
@@ -176,8 +176,8 @@ const Login = () => {
                 </span>
               </Col>
             </Col>
-            <Link to="/signup">
-              <h1 className="py-6 text-center cursor-pointer text-md hover:underline">
+            <Link to="/register">
+              <h1 className="py-6 text-center cursor-pointer text-base hover:underline">
                 Don't have an account yet? <span>Sign up</span>
               </h1>
             </Link>
